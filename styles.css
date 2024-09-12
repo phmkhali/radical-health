@@ -93,10 +93,9 @@ p {
 
 .mission-statement-content {
     max-width: 80%; 
-    background-color:#313131;
 }
 .mission-statement-content-typewriter {
-    background-color:#660d0d;
+    width: fit-content;
 }
 
 .vertical-grid {
@@ -107,6 +106,7 @@ p {
 }
 
 .grid-item {
+    max-width: 90%;
     display: flex;
     align-items: flex-start; 
     border-radius: 10px;
@@ -114,6 +114,7 @@ p {
     text-align: left;
     color: #fff;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: #1b1b1b;
     transform: translateX(-100px); 
     opacity: 0;
 }
@@ -121,15 +122,21 @@ p {
     display: flex;
     flex-direction: column;
 }
+
 .grid-item h3 {
     margin: 0; 
 }
+.grid-item .solution {
+    margin: 0; 
+    color: var(--primary-color);
+}
+
 .grid-item p {
     margin: 5px 0 0; 
     line-height: 1.4; 
 }
 .grid-item:hover {
-    background-color: #444;
+    background-color: #313131;
     transform: translateX(0); 
 }
 
