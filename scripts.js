@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const dots = document.querySelectorAll('#scroll-indicator .dot');
     const sections = Array.from(dots).map(dot => document.querySelector(dot.getAttribute('data-target')));
-    const title = document.querySelector('#title .animate-title');
+    const text = document.querySelector('#mission-statement .animate-text');
 
     function updateActiveDot() {
         const scrollPosition = window.scrollY + window.innerHeight / 2;
@@ -42,12 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Animate title
-        const rect = title.getBoundingClientRect();
+        // Animate text
+        const rect = text.getBoundingClientRect();
         if (rect.top < windowHeight && rect.bottom >= 0) {
-            title.classList.add('typewriter');
+            text.classList.add('typewriter');
         } else {
-            title.classList.remove('typewriter'); // Remove class to reset animation
+            text.classList.remove('typewriter'); // Remove class to reset animation
         }
     }
 
@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateActiveDot(); // Initialize on page load
     animateOnScroll(); // Initialize on page load
 });
+
 
 let lastScrollTop = 0;
 const topBar = document.querySelector('.top-bar');

@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #e74c3c;
+    --primary-color: #f05b5b;
     --secondary-color: #333;
     --accent-color: #fff;
 }
@@ -21,7 +21,7 @@ body {
 .container {
     height: 100vh;
     width: 90%;
-    padding: 40px;
+    padding: 0 40px;
     margin: 50px;
     /* background: #111; */
 }
@@ -32,9 +32,7 @@ h1 {
 }
 
 h2 {
-    margin-bottom: 30px;
-    font-size: 2.5em;
-    color: var(--primary-color);
+    font-size: 3em;
 }
 
 h3 {
@@ -46,7 +44,7 @@ p {
     font-size: 1.2em;
 }
 .btn-primary {
-    background-color: #f05b5b;
+    background-color: var(--primary-color);
     color: white;
     padding: 12px 24px;
     border: none;
@@ -84,22 +82,21 @@ p {
     margin-bottom: 30px;
 }
 
-/* About Section Styles */
-#about {
-    padding: 80px 20px;
-    background-color: #111;
+/* mission-statement Section Styles */
+#mission-statement {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.about-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    max-width: 1200px;
-    padding: 50px;
+
+.mission-statement-content {
+    max-width: 80%; 
+    background-color:#313131;
+}
+.mission-statement-content-typewriter {
+    background-color:#660d0d;
 }
 
 .vertical-grid {
@@ -145,12 +142,12 @@ p {
     margin-right: 15px;
 }
 
-.about-image {
+.mission-statement-image {
     width: 50%;
     text-align: center;
 }
 
-.about-image img {
+.mission-statement-image img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
@@ -356,7 +353,7 @@ footer {
 }
 
 .nav-btn:hover {
-    background-color: #ec9090;
+    background-color: #313131;
     color: #fff;
 }
 
@@ -413,3 +410,25 @@ footer {
     }
 }
 
+/* Typewriter Animation */
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blinkCursor {
+    0% { border-right: 2px solid transparent; }
+    50% { border-right: 2px solid var(--primary-color); }
+    100% { border-right: 2px solid transparent; }
+}
+
+.typewriter {
+    display: inline-block;
+    color: var(--primary-color);
+    overflow: hidden; /* Ensures the text does not overflow the container */
+    white-space: nowrap; /* Prevents the text from wrapping */
+    border-right: 2px solid var(--primary-color); /* Creates a cursor effect */
+    animation: typewriter 1.5s steps(30, end) forwards, blinkCursor 0.75s step-end infinite;
+    width: 0; /* Start with no width */
+    animation-fill-mode: forwards; /* Ensure the animation's final state is preserved */
+}
