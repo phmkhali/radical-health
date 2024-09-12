@@ -50,24 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             text.classList.remove('typewriter'); // Remove class to reset animation
         }
-
-        // Animate counters
-        counters.forEach(counter => {
-            const rect = counter.getBoundingClientRect();
-            if (rect.top < windowHeight && rect.bottom >= 0) {
-                if (!counter.classList.contains('animated')) { // Check if already animated
-                    const endValue = parseInt(counter.getAttribute('data-end-value'), 10);
-                    resetCounter(counter, endValue);
-                    counter.classList.add('animated'); // Mark as animated
-                }
-            } else {
-                counter.classList.remove('animated'); // Reset if out of view
-                counter.textContent = '0'; // Reset counter to initial value
-            }
-        });
     }
 
-    function resetCounter(element, endValue) {
+    function updateCounter(element, endValue) {
         let startValue = 0;
         const duration = 2000; // Duration of the animation in milliseconds
         const stepTime = 50; // Interval between updates in milliseconds
@@ -88,6 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }, stepTime);
     }
 
+    function resetCounter(element, endValue) {
+        element.textContent = '0'; // Reset counter to initial value
+        updateCounter(element, endValue); // Start animation
+    }
+
     const observerOptions = {
         threshold: 0.5 // Trigger when 50% of the element is in view
     };
@@ -98,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const counterElement = entry.target;
                 const endValue = parseInt(counterElement.getAttribute('data-end-value'), 10);
                 resetCounter(counterElement, endValue);
-                observer.unobserve(counterElement); // Stop observing once the counter is animated
             }
         });
     };
