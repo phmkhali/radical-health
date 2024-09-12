@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dots = document.querySelectorAll('#scroll-indicator .dot');
     const sections = Array.from(dots).map(dot => document.querySelector(dot.getAttribute('data-target')));
     const text = document.querySelector('#mission-statement .animate-text');
+    const counters = document.querySelectorAll('.counter');
 
     function updateActiveDot() {
         const scrollPosition = window.scrollY + window.innerHeight / 2;
@@ -49,7 +50,66 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             text.classList.remove('typewriter'); // Remove class to reset animation
         }
+
+        // Animate counters
+        counters.forEach(counter => {
+            const rect = counter.getBoundingClientRect();
+            if (rect.top < windowHeight && rect.bottom >= 0) {
+                if (!counter.classList.contains('animated')) { // Check if already animated
+                    const endValue = parseInt(counter.getAttribute('data-end-value'), 10);
+                    resetCounter(counter, endValue);
+                    counter.classList.add('animated'); // Mark as animated
+                }
+            } else {
+                counter.classList.remove('animated'); // Reset if out of view
+                counter.textContent = '0'; // Reset counter to initial value
+            }
+        });
     }
+
+    function resetCounter(element, endValue) {
+        let startValue = 0;
+        const duration = 2000; // Duration of the animation in milliseconds
+        const stepTime = 50; // Interval between updates in milliseconds
+        const steps = Math.ceil(duration / stepTime);
+        const increment = (endValue - startValue) / steps;
+
+        const formatNumber = (number) => {
+            return number.toLocaleString(); // Format number with thousands separators
+        };
+
+        const counterInterval = setInterval(() => {
+            startValue += increment;
+            if (startValue >= endValue) {
+                clearInterval(counterInterval);
+                startValue = endValue;
+            }
+            element.textContent = formatNumber(Math.floor(startValue));
+        }, stepTime);
+    }
+
+    const observerOptions = {
+        threshold: 0.5 // Trigger when 50% of the element is in view
+    };
+
+    const observerCallback = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counterElement = entry.target;
+                const endValue = parseInt(counterElement.getAttribute('data-end-value'), 10);
+                resetCounter(counterElement, endValue);
+                observer.unobserve(counterElement); // Stop observing once the counter is animated
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    counters.forEach(counter => {
+        counter.setAttribute('data-end-value', counter.textContent); // Set the end value
+        counter.textContent = '0'; // Set initial value
+        observer.observe(counter); // Start observing the element
+    });
 
     window.addEventListener('scroll', () => {
         updateActiveDot();
@@ -59,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateActiveDot(); // Initialize on page load
     animateOnScroll(); // Initialize on page load
 });
-
 
 let lastScrollTop = 0;
 const topBar = document.querySelector('.top-bar');
