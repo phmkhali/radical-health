@@ -123,3 +123,12 @@ window.addEventListener('scroll', function() {
 
     lastScrollTop = scrollTop;
 });
+
+document.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    let scrollAmount = e.deltaY;
+    window.scrollBy({
+        top: scrollAmount,
+        behavior: 'smooth'
+    });
+}, { passive: false });

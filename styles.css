@@ -2,28 +2,51 @@
     --primary-color: #f05b5b;
     --secondary-color: #333;
     --accent-color: #fff;
+    --top-bar-height: 50px;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth; 
 
+}
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #000;
+    background-color: #111;
     color: #fff;
     overflow-x: hidden;
+    overflow-y: auto; /* Change this */
+    height: 100%;
+}
+
+section {
+    scroll-snap-align: start; 
+    display: flex;
+    align-items: center;
+    height: calc(100vh - var(--top-bar-height));
+    justify-content: center;
+    transition: transform 0.7s ease-in-out; 
 }
 
 /* General Styles */
 .container {
+    display: flex;
+    height: calc(100vh - var(--top-bar-height));
+    flex-direction: column; 
+    align-items: flex-start; 
+    justify-content: center; 
     width: 90%;
     padding: 0 40px;
     margin: 50px;
     /* background: #111; */
 }
+
 
 h1 {
     font-size: 5em;
@@ -62,11 +85,12 @@ p {
 
 /* Header Styles */
 #landing {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+        background: url('assets/layered-waves-haikei.svg') no-repeat center center;
+    background-size: cover;
 }
 .landing-text {
     margin: 0;
@@ -87,6 +111,8 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 50px;
+    height: calc(100vh - var(--top-bar-height));
 }
 
 .mission-statement-content {
@@ -174,6 +200,7 @@ p {
 /* Data Section */
 #data {
     margin-top: 50px;
+    height: calc(100vh - var(--top-bar-height));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -188,8 +215,10 @@ p {
 }
 
 .image-counters {
+    width:  100%;
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+    justify-content: space-around;
     margin-top: 20px;
 }
 
@@ -205,7 +234,7 @@ p {
 
 .placeholder-img {
     width: auto; 
-    height:120px; 
+    height:100px; 
     object-fit: cover; 
     border-radius: 8px; 
 }
@@ -221,20 +250,13 @@ p {
 /* Team Section Styles */
 #team {
     padding: 60px 20px;
-    background-color: #000;
     color: #fff;
 }
 
-#team h2 {
-    margin-bottom: 30px;
-    font-size: 2.5em;
-    text-align: center;
-    font-weight: bold;
-}
-
 .team-grid {
+    margin-top: 60px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     justify-items: center;
 }
@@ -245,9 +267,23 @@ p {
     overflow: hidden;
     text-align: center;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     transform: translateY(50px);
 }
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile screens */
+    }
+}
+
+/* Media query for smaller mobile devices */
+@media (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
+}
+
 .team-member.fadeInUp {
     animation: fadeInUp 1s ease-in-out forwards;
 }
@@ -286,6 +322,7 @@ p {
 .team-member:hover {
     transform: translateY(-10px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+    background-color: #1b1b1b;
 }
 /* Animation keyframes */
 @keyframes fadeInUp {
@@ -310,6 +347,10 @@ p {
 
 .team-member:nth-child(3) {
     animation-delay: 0.4s;
+}
+
+.team-member:nth-child(4) {
+    animation-delay: 0.6s;
 }
 
 /* Footer Styles */
@@ -346,28 +387,18 @@ footer {
     top: 0; 
     left: 0;
     width: 100%;
-    height: 60px;
-    background-color: rgba(0, 0, 0, 0.8);
+    height: 50px;
+    background-color:#111;
     display: flex; 
     align-items: center;
     padding: 40px 100px; 
     z-index: 1000;
-    transform: translateY(-100%); 
-    transition: transform 0.3s ease-in-out;
 }
 
-.top-bar.show {
-    transform: translateY(0); 
-}
 
 .logo img {
     height: 40px;
     margin-right: 30px;
-}
-
-
-.top-bar.show {
-    transform: translateY(0); 
 }
 
 .logo img {
