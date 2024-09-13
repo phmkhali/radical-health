@@ -107,6 +107,43 @@ p {
     font-size: x-large;
     margin-bottom: 30px;
 }
+@media (max-width: 768px) {
+    #landing {
+        background-size: cover;
+        padding: 20px; 
+        text-align: center; 
+    }
+
+    .landing-text h1 {
+        font-size: 3em; 
+    }
+
+    .landing-text h2 {
+        font-size: 2em; 
+    }
+
+    .landing-text p {
+        font-size: 1.2em;
+    }
+}
+@media (max-width: 480px) {
+    #landing {
+        padding: 10px;
+    }
+
+    .landing-text h1 {
+        font-size: 2.5em;
+    }
+
+    .landing-text h2 {
+        font-size: 1.5em; 
+    }
+
+    .landing-text p {
+        font-size: 1em; 
+    }
+}
+
 
 /* Mission Statement Section Styles */
 #mission-statement {
@@ -119,9 +156,10 @@ p {
 
 .mission-statement-content {
     margin-top: 50px;
-    max-width: 80%; 
 }
+
 .mission-statement-content-typewriter {
+    display: inline-block;
     width: fit-content;
 }
 
@@ -137,11 +175,12 @@ p {
     display: flex;
     align-items: flex-start; 
     border-radius: 10px;
+    flex-direction: column;
     padding: 30px;
     text-align: left;
     color: #fff;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    background-color: #1b1b1b;
+    background-color: #252525;
     transform: translateX(-100px); 
     opacity: 0;
 }
@@ -170,6 +209,60 @@ p {
 .grid-item.fadeInLeft {
     animation: fadeInLeft 1s ease-in-out forwards;
 }
+@media (max-width: 768px) {
+    #mission-statement {
+        padding: 40px 15px;
+    }
+
+    .mission-statement-content {
+        margin-top: 30px;
+        max-width: 90%;
+    }
+
+    .mission-statement-content-typewriter {
+        font-size: 1.5em;
+        max-width: 100%; 
+    }
+
+    .vertical-grid {
+        margin-top: 30px;
+        gap: 15px;
+    }
+
+    .grid-item {
+        padding: 20px;
+        text-align: center; 
+    }
+}
+
+@media (max-width: 480px) {
+    #mission-statement {
+        padding: 30px 10px;
+    }
+
+    .mission-statement-content {
+        margin-top: 20px;
+        max-width: 100%;
+    }
+
+    .mission-statement-content-typewriter {
+        font-size: 1.2em;
+        max-width: 100%;
+    }
+
+    .vertical-grid {
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .grid-item {
+        padding: 15px;
+        font-size: 0.9em; 
+        max-width: 100%;
+    }
+}
+
+
 
 /* Animation keyframes */
 @keyframes fadeInLeft {
@@ -250,40 +343,57 @@ p {
 
 
 /* Team Section Styles */
+#team-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url('assets/waves-b.svg') no-repeat center center;
+    background-size: cover;
+}
+
 #team {
-    padding: 60px 20px;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url('assets/waves-t.svg') no-repeat center center;
+    background-size: cover;
+}
+
+.arrow-down {
+    margin: 50px 0 0 0; 
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 35px solid var(--primary-color); 
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
 }
 
 .team-grid {
-    margin-top: 60px;
+    margin-top: 100px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    justify-items: center;
+    justify-items: stretch;
+    align-items: start;
 }
 
+/* Team Member Styling */
 .team-member {
     opacity: 0;
     border-radius: 10px;
     overflow: hidden;
-    text-align: center;
+    text-align: left; 
     padding: 20px;
-    transform: translateY(50px);
-}
-
-/* Media query for mobile devices */
-@media (max-width: 768px) {
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile screens */
-    }
-}
-
-/* Media query for smaller mobile devices */
-@media (max-width: 480px) {
-    .team-grid {
-        grid-template-columns: 1fr; /* 1 column on very small screens */
-    }
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .team-member.fadeInUp {
@@ -291,40 +401,44 @@ p {
 }
 
 .team-member img {
-    width: 200px;
+    width: 100%; 
+    max-width: 200px; 
     height: auto;
-    border-radius: 50%;
-    display: block;
-    object-fit: cover;
-    margin: 0 auto;
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-bottom: 15px;
 }
 
 .team-info {
-    padding: 15px;
+    padding: 10px 15px;
 }
 
 .team-info h3 {
-    margin: 15px 0;
-    font-size: 1.8em;
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: var(--accent-color); 
+    font-weight: 600;
 }
 
 .team-info p.position-title {
     margin-bottom: 10px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: bold;
-    color: #ccc;
+    color: var(--primary-color);
 }
 
 .team-info p.introduction {
-    margin: 5px 0;
+    margin: 10px 0;
     font-size: 1em;
-    color: #aaa;
+    color: #a8a8a8;
+    line-height: 1.6; 
 }
 
+/* Hover effect for team members */
 .team-member:hover {
     transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
-    background-color: #1b1b1b;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
+    background-color: #252525;
 }
 /* Animation keyframes */
 @keyframes fadeInUp {
@@ -353,6 +467,25 @@ p {
 
 .team-member:nth-child(4) {
     animation-delay: 0.6s;
+}
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .team-member img {
+        max-width: 120px; 
+    }
+}
+
+/* Media query for smaller mobile devices */
+@media (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: 1fr; 
+    }
+    .team-member img {
+        max-width: 100px; /* Even smaller for mobile */
+    }
 }
 
 /* Footer Styles */

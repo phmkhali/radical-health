@@ -1,16 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     const dots = document.querySelectorAll('#scroll-indicator .dot');
-    const sections = Array.from(dots).map(dot => document.querySelector(dot.getAttribute('data-target')));
-    const text = document.querySelector('#mission-statement .animate-text');
+    const sections = Array.from(dots).map(dot => {
+        const targets = dot.getAttribute('data-target').split(',');
+        return targets.map(target => document.querySelector(target));
+    }); const text = document.querySelector('#mission-statement .animate-text');
     const counters = document.querySelectorAll('.counter');
 
     // Update the active dot in the scroll indicator
+    // Update the active dot in the scroll indicator
     function updateActiveDot() {
         const scrollPosition = window.scrollY + window.innerHeight / 2;
-        let index = sections.findIndex(section => {
+        let index = sections.findIndex(sectionArray => sectionArray.some(section => {
             const rect = section.getBoundingClientRect();
             return rect.top + window.scrollY <= scrollPosition && rect.bottom + window.scrollY >= scrollPosition;
-        });
+        }));
 
         // If no section is found, default to the first dot
         if (index === -1) index = 0;
@@ -19,6 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
             dot.classList.toggle('active', i === index);
         });
     }
+
+    // Add scroll event listener for the dots
+    dots.forEach((dot, dotIndex) => {
+        dot.addEventListener('click', () => {
+            const targets = sections[dotIndex];
+            targets.forEach((target, index) => {
+                setTimeout(() => {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }, index * 500); // Add delay between scrolls for each section
+            });
+        });
+    });
 
     // Handle animations for grid items, team members, and mission statement text
     function animateOnScroll() {
