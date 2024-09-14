@@ -97,16 +97,36 @@ p {
     background-color: rgba(0, 0, 0, 0.6); 
     z-index: 1; 
 }
+
 .landing-text {
     margin: 0;
     position: relative; 
     z-index: 2;
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
 }
 
 .subheader {
     font-size: x-large;
     margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s; 
 }
+
+/* Visible state for landing text */
+.landing-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slide-in effect for subheader */
+.subheader.visible {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
 @media (max-width: 768px) {
     #landing {
         background-size: cover;
