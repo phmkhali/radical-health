@@ -577,13 +577,14 @@ font-size: 2.5em;    }
     flex-direction: column;
     align-items: center;
     height: fit-content;
-    margin: 20px;
     color: #aaa;
+    background-color: black;
 }
 
  #contact .container {
     padding: 20px;
     height: 100%;
+    align-items: center;
 }
 
 #contact .btn-primary {
