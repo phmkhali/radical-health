@@ -3,7 +3,10 @@
     --secondary-color: #333;
     --accent-color: #fff;
 }
-
+@font-face {
+    font-family: 'SF';
+    src: url('fonts/SFPRODISPLAYREGULAR.OTF');
+}
 * {
     margin: 0;
     padding: 0;
@@ -11,8 +14,8 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #000;
+    font-family: 'SF', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: #111;
     color: #fff;
     overflow-x: hidden;
 }
@@ -79,6 +82,9 @@ p {
 .subheader {
     font-size: x-large;
     margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s; 
 }
 
 /* Mission Statement Section Styles */
