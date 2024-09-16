@@ -14,7 +14,8 @@
     <div id="scroll-indicator">
         <div class="dot" data-target="#landing"></div>
         <div class="dot" data-target="#mission-statement"></div>
-        <div class="dot" data-target="#team"></div>
+        <div class="dot" data-target="#data"></div>
+        <div class="dot" data-target="#team-intro,#team"></div>
     </div>
     <div class="top-bar">
         <div class="logo">
@@ -23,11 +24,13 @@
         <nav class="nav-links">
             <a href="#landing" class="nav-btn">Home</a>
             <a href="#mission-statement" class="nav-btn">Mission Statement</a>
+            <a href="#data" class="nav-btn">Our Data</a>
             <a href="#team" class="nav-btn">Team</a>
+            <a href="#" class="nav-btn nav-meeting-btn">Request a meeting</a>
         </nav>
     </div>
 
-    <header id="landing">
+    <section id="landing">
         <div class="container">
             <div class="landing-text">
                 <h1>Radical Health</h1>
@@ -35,34 +38,36 @@
                 <button class="btn-primary">Request a meeting</button>
             </div>
         </div>
-    </header>
+    </section>
 
     <section id="mission-statement">
         <div class="container">
             <div class="mission-statement-content">
-                <h2>In 10 years, our models will drive all cancer treatment decision-making </h2>
-            </div>
-            <div class="mission-statement-content-typewriter">
-                <h2 class="animate-text">saving 10,000,000 human lives.</h2>
-            </div>
-            <div class="vertical-grid">
-                <div class="grid-item animate-grid-item">
-                    <div class="text-content">
-                        <h3>Problem</h3>
-                        <p>There are millions of valuable datapoints (past patients, research) that are relevant to
-                            clinical decision-making, However in practice, doctors can’t physically process such immense
-                            unstructured datasets to make decisions on clinical care. </p>
+                <h2>In 10 years, our models will drive all cancer treatment decision-making</h2>
+                <div class="mission-statement-content-typewriter">
+                    <h2 class="animate-text">saving 10,000,000 human lives.</h2>
+                </div>
+                <div class="vertical-grid">
+                    <div class="grid-item animate-grid-item">
+                        <div class="text-content">
+                            <h3>Problem</h3>
+                            <p>There are millions of valuable datapoints (past patients, research) that are relevant to
+                                clinical decision-making. However, in practice, doctors can’t physically process such
+                                immense unstructured datasets to make decisions on clinical care.</p>
+                        </div>
+                    </div>
+                    <div class="grid-item animate-grid-item">
+                        <div class="text-content-solution">
+                            <h3 class="solution">Solution</h3>
+                            <p>We're building foundational cancer models that will make doctors superhuman and
+                                supercharge doctor-patient trust.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="grid-item animate-grid-item">
-                    <div class="text-content-solution">
-                        <h3 class="solution">Solution</h3>
-                        <p>We're building foundational cancer models that will make doctors superhuman and supercharge
-                            doctor-patient trust.</p>
-                    </div>
-                </div>
             </div>
+        </div>
     </section>
+
 
     <section id="data">
         <div class="container">
@@ -78,45 +83,64 @@
                 <div class="image-container">
                     <img src="assets/mayo_clinic.png" alt="Placeholder Image 2" class="placeholder-img">
                     <div class="counter" id="counter2" data-end-value="200">2500000</div>
-                    <p>Validation set</p>
-                </div>                
+                    <p>Provisional validation set</p>
+                </div>
             </div>
         </div>
     </section>
-    
 
-    <!-- <section id="team">
+
+    <section id="team-intro">
         <div class="container">
-            <h2>Meet Our Team</h2>
+            <h2>A team of outlier doctors and AI engineers advised by America’s top decision-makers and
+                practitioners in oncology.</h2>
+            <div class="arrow-down"></div>
+        </div>
+    </section>
+
+    <section id="team">
+        <div class="container">
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="assets/profile-picture-placeholder.jpg" alt="Employee 1">
+                    <img src="assets/profile-picture-placeholder.jpg" alt="Simone Jensen">
                     <div class="team-info">
-                        <h3>Employee One</h3>
-                        <p class="position-title">Founder & CEO</p>
-                        <p class="introduction">Brief introduction mission-statement Employee One.</p>
+                        <h3>Simone Jensen</h3>
+                        <p class="position-title">Co-Founder CEO</p>
+                        <p class="introduction">Principal’s Medal at St Andrews University, No.1 in Maths undergrad, 2x
+                            National Tennis Doubles Champion, 3rd time founder including a spin-out in precision
+                            oncology.</p>
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="assets/profile-picture-placeholder.jpg" alt="Employee 2">
+                    <img src="assets/profile-picture-placeholder.jpg" alt="Gediminas Pazera">
                     <div class="team-info">
-                        <h3>Employee Two</h3>
-                        <p class="position-title">CTO</p>
-                        <p class="introduction">Brief introduction mission-statement Employee Two.</p>
+                        <h3>Gediminas Pazera</h3>
+                        <p class="position-title">Co-Founder CTO</p>
+                        <p class="introduction">Oxford PhD in Computational Physics by Age 25, Oxford Math & Physics
+                            Lecturer by Age 22, Professional bachata dancer.</p>
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="assets/profile-picture-placeholder.jpg" alt="Employee 3">
+                    <img src="assets/profile-picture-placeholder.jpg" alt="Ella Mi">
                     <div class="team-info">
-                        <h3>Employee Three</h3>
-                        <p class="position-title">COO</p>
-                        <p class="introduction">Brief introduction mission-statement Employee Three.</p>
+                        <h3>Ella Mi</h3>
+                        <p class="position-title">Non-Exec Clinical and Regulatory Director</p>
+                        <p class="introduction">Cambridge-trained NHS Medical Oncologist, Award Winning Oxford ML
+                            researcher, 7 years consultant in regulation and healthtech.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="assets/profile-picture-placeholder.jpg" alt="Bryan Tan">
+                    <div class="team-info">
+                        <h3>Bryan Tan</h3>
+                        <p class="position-title"> Founding Engineer</p>
+                        <p class="introduction">Cambridge Healthcare ML engineer (BA Biology valedictorian, MSc Comp.
+                            Bio best thesis), ex-military intelligence (best cadet during training), ex-founder.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
-
+    </section>
     <footer>
         <div class="connect-with-us">
             <p>Connect with us:</p>
