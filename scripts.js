@@ -17,9 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return rect.top + window.scrollY <= scrollPosition && rect.bottom + window.scrollY >= scrollPosition;
         }));
 
-        // If no section is found, default to the first dot
-        if (index === -1) index = 0;
-
         dots.forEach((dot, i) => {
             dot.classList.toggle('active', i === index);
         });
@@ -149,11 +146,4 @@ document.addEventListener('wheel', function (e) {
     });
 }, { passive: false });
 
-// Adjust scroll-snap behavior based on screen size
-const isLaptop = window.innerWidth < 1024;
-const scrollSnapStop = isLaptop ? 'normal' : 'always';
-document.documentElement.style.setProperty('--scroll-snap-stop', scrollSnapStop);
 
-document.querySelectorAll('section').forEach(section => {
-    section.style.scrollSnapStop = getComputedStyle(document.documentElement).getPropertyValue('--scroll-snap-stop');
-});

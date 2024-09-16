@@ -1,6 +1,6 @@
 :root {
     --primary-color: #329296;
-    --secondary-color: #6bfaffbb;
+    --secondary-color: #d48b1e;
     --accent-color: #fff;
     --top-bar-height: 50px;
 }
@@ -35,7 +35,6 @@ body {
 section {
     display: flex;
     height: 100vh;
-    width: auto;
     transition: transform 0.7s ease-in-out;
 }
 
@@ -111,7 +110,7 @@ p {
     }    
 }
 .btn-primary {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: #fff;
     padding: 12px 24px;
     border: none;
@@ -123,7 +122,7 @@ p {
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-color);
+    background-color: #313131;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
     transform: scale(1.05);
 }
@@ -197,7 +196,6 @@ p {
 
 .mission-statement-content {
     margin-top: 50px;
-    width: 100vw;
 }
 
 .mission-statement-content-typewriter {
@@ -238,7 +236,7 @@ p {
 
 .grid-item .solution {
     margin: 0;
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .grid-item p {
@@ -327,16 +325,24 @@ p {
     align-items: center;
     justify-content: center;
     text-align: center;
+    background-color: black;
 }
-
+#data .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .data-content {
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
+.highlight {
+    color: var(--primary-color); 
+}
 
 .image-counters {
-    width: 100%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -363,7 +369,7 @@ p {
 .counter {
     margin-top: 40px;
     font-size: 3em;
-    color: var(--primary-color);
+    color:#a8a8a8;
     font-weight: bold;
 }
 
@@ -566,33 +572,64 @@ font-size: 2.5em;    }
     }
 }
 
-/* Footer Styles */
-footer {
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    margin: 20px;
+    color: #aaa;
+}
+
+ #contact .container {
     padding: 20px;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
+    height: 100%;
 }
 
-.connect-with-us p {
-    margin: 10px;
-    font-size: 2em;
+#contact .btn-primary {
+    background-color: var(--primary-color);
+    width: fit-content;
 }
 
-.email-link {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: bold;
+.logos {
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+    gap: 20px;
 }
 
-.email-link:hover {
-    text-decoration: underline;
+.logos img {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
-.connect-with-us p.copyright {
+p.copyright {
+    display: flex;
     margin-top: 40px;
     font-size: 1em;
     color: #aaa;
+    align-items: flex-end;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    #contact .container {
+        grid-template-columns: 1fr; /* Stack form and logos section on smaller screens */
+        gap: 20px;
+    }
+
+    .logos {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .logos img {
+        width: 80px;
+    }
 }
 
 /* Top Bar Styles */
@@ -632,7 +669,7 @@ footer {
 }
 
 .nav-meeting-btn {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: bold;
 }
 
@@ -668,7 +705,7 @@ footer {
 }
 
 .dot.active {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
 
 /* Animations */
