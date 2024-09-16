@@ -4,44 +4,48 @@
     --accent-color: #fff;
     --top-bar-height: 50px;
 }
+
 @font-face {
     font-family: 'SF';
     src: url('fonts/SFPRODISPLAYREGULAR.OTF');
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+
 html {
     scroll-snap-type: y mandatory;
-    scroll-behavior: smooth; 
+    scroll-behavior: smooth;
 
 }
+
 body {
     font-family: 'SF', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background-color: #111;
     color: #fff;
     overflow-x: hidden;
-    overflow-y:scroll; 
+    overflow-y: scroll;
     height: 100%;
 }
+
 section {
     display: flex;
-    align-items: center;
     height: 100vh;
-    justify-content: center;
-    transition: transform 0.7s ease-in-out; 
+    width: auto;
+    transition: transform 0.7s ease-in-out;
 }
 
 /* General Styles */
 .container {
-    scroll-snap-align: start; 
+    scroll-snap-align: start;
     display: flex;
     height: 100vh;
-    flex-direction: column; 
-    justify-content: center; 
+    flex-direction: column;
+    justify-content: center;
     width: 90%;
     padding: 0 40px;
 }
@@ -63,22 +67,65 @@ h3 {
 p {
     font-size: 1.2em;
 }
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        text-wrap: wrap;
+    }
+    h3 {
+        font-size: 1.5em;
+        text-wrap: wrap;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    .container {
+        scroll-snap-align: start;
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        padding: 0 40px;
+    }    
+}
 .btn-primary {
-    background-color: var(--primary-color); 
+    background-color: var(--primary-color);
     color: #fff;
     padding: 12px 24px;
     border: none;
-    border-radius: 10px; 
+    border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-color); 
+    background-color: var(--primary-color);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 /* Header Styles */
@@ -88,8 +135,9 @@ p {
     align-items: center;
     background: url('assets/background.svg') no-repeat center center;
     background-size: cover;
-    text-align: center; 
+    text-align: center;
 }
+
 #landing::before {
     content: '';
     position: absolute;
@@ -97,25 +145,25 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); 
-    z-index: 1; 
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
 }
 
 .landing-text {
     margin: 0;
-    position: relative; 
+    position: relative;
     z-index: 2;
     opacity: 0;
-    transform: translateY(20px); 
-    transition: opacity 0.3s ease, transform 0.3s ease; 
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .subheader {
     font-size: x-large;
     margin-bottom: 50px;
     opacity: 0;
-    transform: translateY(20px); 
-    transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s; 
+    transform: translateY(20px);
+    transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
 }
 
 /* Visible state for landing text */
@@ -127,43 +175,12 @@ p {
 /* Slide-in effect for subheader */
 .subheader.visible {
     opacity: 1;
-    transform: translateY(0); 
+    transform: translateY(0);
 }
 
-@media (max-width: 768px) {
-    #landing {
-        background-size: cover;
-        padding: 20px; 
-        text-align: center; 
-    }
-
-    .landing-text h1 {
-        font-size: 3em; 
-    }
-
-    .landing-text h2 {
-        font-size: 2em; 
-    }
-
+@media (max-width: 480px) {
     .landing-text p {
         font-size: 1.2em;
-    }
-}
-@media (max-width: 480px) {
-    #landing {
-        padding: 10px;
-    }
-
-    .landing-text h1 {
-        font-size: 2.5em;
-    }
-
-    .landing-text h2 {
-        font-size: 1.5em; 
-    }
-
-    .landing-text p {
-        font-size: 1em; 
     }
 }
 
@@ -177,8 +194,10 @@ p {
     margin-top: 50px;
 }
 
+
 .mission-statement-content {
     margin-top: 50px;
+    width: 100vw;
 }
 
 .mission-statement-content-typewriter {
@@ -196,7 +215,7 @@ p {
 .grid-item {
     max-width: 90%;
     display: flex;
-    align-items: flex-start; 
+    align-items: flex-start;
     border-radius: 10px;
     flex-direction: column;
     padding: 30px;
@@ -204,47 +223,42 @@ p {
     color: #fff;
     transition: transform 0.3s ease, background-color 0.3s ease;
     background-color: #252525;
-    transform: translateX(-100px); 
+    transform: translateX(-100px);
     opacity: 0;
 }
+
 .grid-item .text-content {
     display: flex;
     flex-direction: column;
 }
 
 .grid-item h3 {
-    margin: 0; 
+    margin: 0;
 }
+
 .grid-item .solution {
-    margin: 0; 
+    margin: 0;
     color: var(--primary-color);
 }
 
 .grid-item p {
-    margin: 5px 0 0; 
-    line-height: 1.4; 
+    margin: 5px 0 0;
+    line-height: 1.4;
 }
+
 .grid-item:hover {
     background-color: #313131;
-    transform: translateX(0); 
+    transform: translateX(0);
 }
 
 .grid-item.fadeInLeft {
     animation: fadeInLeft 1s ease-in-out forwards;
 }
-@media (max-width: 768px) {
-    #mission-statement {
-        padding: 40px 15px;
-    }
 
+@media (max-width: 768px) {
     .mission-statement-content {
         margin-top: 30px;
         max-width: 90%;
-    }
-
-    .mission-statement-content-typewriter {
-        font-size: 1.5em;
-        max-width: 100%; 
     }
 
     .vertical-grid {
@@ -254,25 +268,11 @@ p {
 
     .grid-item {
         padding: 20px;
-        text-align: center; 
+        text-align: center;
     }
 }
 
 @media (max-width: 480px) {
-    #mission-statement {
-        padding: 30px 10px;
-    }
-
-    .mission-statement-content {
-        margin-top: 20px;
-        max-width: 100%;
-    }
-
-    .mission-statement-content-typewriter {
-        font-size: 1.2em;
-        max-width: 100%;
-    }
-
     .vertical-grid {
         gap: 10px;
         margin-top: 20px;
@@ -280,8 +280,8 @@ p {
 
     .grid-item {
         padding: 15px;
-        font-size: 0.9em; 
-        max-width: 100%;
+        text-align: left;
+        line-height: 2;
     }
 }
 
@@ -291,11 +291,14 @@ p {
 @keyframes fadeInLeft {
     0% {
         opacity: 0;
-        transform: translateX(-100px); /* Start from the side */
+        transform: translateX(-100px);
+        /* Start from the side */
     }
+
     100% {
         opacity: 1;
-        transform: translateX(0); /* Move to final position */
+        transform: translateX(0);
+        /* Move to final position */
     }
 }
 
@@ -333,7 +336,7 @@ p {
 }
 
 .image-counters {
-    width:  100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -341,7 +344,7 @@ p {
 }
 
 .image-counters p {
-    color:#aaa;
+    color: #aaa;
     margin-top: 10px;
 }
 
@@ -351,10 +354,10 @@ p {
 }
 
 .placeholder-img {
-    width: auto; 
-    height:100px; 
-    object-fit: cover; 
-    border-radius: 8px; 
+    width: auto;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .counter {
@@ -362,6 +365,34 @@ p {
     font-size: 3em;
     color: var(--primary-color);
     font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .counter {
+        font-size: 2em;
+    }
+    .image-counters {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    .image-counters p {
+        font-size: 1em;
+        text-wrap: wrap;
+    }
+    .grid-item {
+        padding: 15px;
+        text-align: left;
+    }
+    .placeholder-img {
+        width: auto;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
 }
 
 
@@ -384,19 +415,27 @@ p {
 }
 
 .arrow-down {
-    margin: 50px 0 0 0; 
+    margin: 50px 0 0 0;
     width: 0;
     height: 0;
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
-    border-top: 35px solid var(--primary-color); 
+    border-top: 35px solid var(--primary-color);
     animation: blink 1s infinite;
 }
 
 @keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0.3; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .team-grid {
@@ -413,9 +452,9 @@ p {
     opacity: 0;
     border-radius: 10px;
     overflow: hidden;
-    text-align: left; 
+    text-align: left;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -424,11 +463,11 @@ p {
 }
 
 .team-member img {
-    width: 100%; 
-    max-width: 200px; 
+    width: 100%;
+    max-width: 200px;
     height: auto;
-    border-radius: 50%; 
-    object-fit: cover; 
+    border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 15px;
 }
 
@@ -439,7 +478,7 @@ p {
 .team-info h3 {
     margin: 10px 0;
     font-size: 1.5em;
-    color: var(--accent-color); 
+    color: var(--accent-color);
     font-weight: 600;
 }
 
@@ -454,24 +493,28 @@ p {
     margin: 10px 0;
     font-size: 1em;
     color: #a8a8a8;
-    line-height: 1.6; 
+    line-height: 1.6;
 }
 
 /* Hover effect for team members */
 .team-member:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     background-color: #252525;
 }
+
 /* Animation keyframes */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
-        transform: translateY(50px); /* Start from below */
+        transform: translateY(50px);
+        /* Start from below */
     }
+
     100% {
         opacity: 1;
-        transform: translateY(0); /* Move to final position */
+        transform: translateY(0);
+        /* Move to final position */
     }
 }
 
@@ -491,23 +534,35 @@ p {
 .team-member:nth-child(4) {
     animation-delay: 0.6s;
 }
+
 /* Media query for mobile devices */
 @media (max-width: 768px) {
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr); 
+    #team-intro .container {
+        padding: 40px;
     }
+    #team-intro h2 {
+font-size: 2.5em;    }
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .team-member img {
-        max-width: 120px; 
+        max-width: 120px;
     }
 }
 
 /* Media query for smaller mobile devices */
 @media (max-width: 480px) {
-    .team-grid {
-        grid-template-columns: 1fr; 
+    #team-intro .container {
+        padding: 40px;
     }
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
     .team-member img {
-        max-width: 100px; /* Even smaller for mobile */
+        max-width: 100px;
+        /* Even smaller for mobile */
     }
 }
 
@@ -539,34 +594,30 @@ footer {
     font-size: 1em;
     color: #aaa;
 }
+
 /* Top Bar Styles */
 .top-bar {
     position: fixed;
-    top: 0; 
-    left: 0;
     width: 100%;
     height: 50px;
-    background-color:#111;
-    display: flex; 
+    background-color: #111;
+    display: flex;
     align-items: center;
-    padding: 40px 100px; 
+    padding: 40px 40px;
     z-index: 1000;
 }
 
-
 .logo img {
     height: 40px;
-    margin-right: 30px;
+    margin-right: 20px;
 }
 
-.logo img {
-    height: 40px;
-}
 .nav-links {
     display: flex;
-    gap: 20px; 
+    gap: 10px;
 }
 
+/* Navbar buttons */
 .nav-btn {
     color: var(--accent-color);
     text-decoration: none;
@@ -579,10 +630,24 @@ footer {
 .nav-btn:hover {
     background-color: #313131;
 }
+
 .nav-meeting-btn {
     color: var(--secondary-color);
     font-weight: bold;
 }
+
+@media (max-width: 768px) {
+    .top-bar {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        display: none;
+    }
+}
+
 
 /* Scroll Indicator Styles */
 #scroll-indicator {
@@ -608,7 +673,8 @@ footer {
 
 /* Animations */
 .animate-grid-item {
-    opacity: 0; /* Initially hide the items */
+    opacity: 0;
+    /* Initially hide the items */
 }
 
 .fadeInUp {
@@ -620,6 +686,7 @@ footer {
         opacity: 0;
         transform: translateY(-50px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -631,31 +698,62 @@ footer {
         opacity: 0;
         transform: translateY(50px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+@media (max-width: 768px) {
+    #scroll-indicator {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    #scroll-indicator {
+        display: none;
+    }
+}
+
 /* Typewriter Animation */
 @keyframes typewriter {
-    from { width: 0; }
-    to { width: 100%; }
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
 }
 
 @keyframes blinkCursor {
-    0% { border-right: 2px solid transparent; }
-    50% { border-right: 2px solid var(--primary-color); }
-    100% { border-right: 2px solid transparent; }
+    0% {
+        border-right: 2px solid transparent;
+    }
+
+    50% {
+        border-right: 2px solid var(--primary-color);
+    }
+
+    100% {
+        border-right: 2px solid transparent;
+    }
 }
 
 .typewriter {
     display: inline-block;
     color: var(--primary-color);
-    overflow: hidden; /* Ensures the text does not overflow the container */
-    white-space: nowrap; /* Prevents the text from wrapping */
-    border-right: 2px solid var(--primary-color); /* Creates a cursor effect */
+    overflow: hidden;
+    /* Ensures the text does not overflow the container */
+    white-space: nowrap;
+    /* Prevents the text from wrapping */
+    border-right: 2px solid var(--primary-color);
+    /* Creates a cursor effect */
     animation: typewriter 1.5s steps(30, end) forwards, blinkCursor 0.75s step-end infinite;
-    width: 0; /* Start with no width */
-    animation-fill-mode: forwards; /* Ensure the animation's final state is preserved */
+    width: 0;
+    /* Start with no width */
+    animation-fill-mode: forwards;
+    /* Ensure the animation's final state is preserved */
 }
