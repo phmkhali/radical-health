@@ -41,7 +41,6 @@ section {
     display: flex;
     height: 100vh;
     flex-direction: column; 
-    align-items: flex-start; 
     justify-content: center; 
     width: 90%;
     padding: 0 40px;
@@ -89,6 +88,7 @@ p {
     align-items: center;
     background: url('assets/background.svg') no-repeat center center;
     background-size: cover;
+    text-align: center; 
 }
 #landing::before {
     content: '';
@@ -112,7 +112,7 @@ p {
 
 .subheader {
     font-size: x-large;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     opacity: 0;
     transform: translateY(20px); 
     transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s; 
