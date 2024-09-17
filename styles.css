@@ -368,7 +368,7 @@ p {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: black;
+  background-color: #111;
 }
 #data .container {
   display: flex;
@@ -449,8 +449,12 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: url("assets/waves-b.svg") no-repeat center center;
+  height: fit-content;
   background-size: cover;
+}
+
+#team-intro .container {
+    height: fit-content;
 }
 
 #team {
@@ -458,8 +462,11 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: url("assets/waves-t.svg") no-repeat center center;
+  background: url("assets/waves-b.svg") no-repeat center center;
   background-size: cover;
+}
+#team .container {
+    justify-content: flex-start;
 }
 
 .arrow-down {
