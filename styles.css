@@ -85,12 +85,12 @@ p {
     text-wrap: wrap;
   }
   h3 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-wrap: wrap;
   }
 
   p {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
   .container {
@@ -131,6 +131,7 @@ p {
 #landing {
   display: flex;
   flex-direction: column;
+  height: auto;
   align-items: center;
   background: url("assets/background.svg") no-repeat center center;
   background-size: cover;
@@ -298,13 +299,14 @@ p {
 
 @media (max-width: 480px) {
     #mission-statement {
-        height: 100vh;
+        height: auto;
+        padding: 10px;
     }
   #mission-statement .container {
     display: flex;
     flex-direction: column;
     gap: 0;
-    height: 100vh;
+    height: auto;
   }
 
   .mission-statement-content {
@@ -315,6 +317,12 @@ p {
   .mission-statement-content h2 {
     font-size: 1.7em;
   }
+  .mission-statement-content h3 {
+    font-size: 1.2em;
+  }
+  .mission-statement-content p {
+    font-size: 0.8em;
+  }
   .mission-statement-content-typewriter {
     width: fit-content;
   }
@@ -322,11 +330,6 @@ p {
     margin: 20px 0;
     width: 100%;
     gap: 20px;
-  }
-
-  .grid-item {
-    text-align: left;
-    line-height: 2;
   }
 }
 
@@ -389,6 +392,7 @@ p {
   align-items: center;
 }
 .data-content {
+  width: 50%;
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 1s ease, transform 1s ease;
@@ -435,9 +439,9 @@ p {
 }
 
 @media (max-width: 480px) {
-    #data h1 {
-        font-size: 2.5em;
-    }
+  .data-content {
+    width: 80%;
+  }
   .counter {
     font-size: 2em;
   }
@@ -469,6 +473,7 @@ p {
 
 #team {
   color: #fff;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -483,7 +488,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
 
@@ -680,15 +685,19 @@ p {
           font-size: 0.9em;
         }
       
+        #contact {
+          padding: 20px;
+        }
         #contact .container {
           padding: 10px 0 0 0;
         }
         #contact p {
             font-size: 1em;
+            text-align: center;
         }
         .contact-grid {
           flex-direction: column;
-          gap: 20px;
+          gap: 30px;
           padding: 10px;
         }
       
