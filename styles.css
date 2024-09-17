@@ -654,37 +654,30 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   height: fit-content;
 }
 
 #contact .container {
-  padding: 20px;
-  height: 100%;
+  padding: 40px 0 0 0;
+  height: fit-content;
   align-items: center;
   justify-content: center;
-  padding: 40px 0;
-}
-
-#contact .btn-primary {
-  background-color: var(--primary-color);
   width: fit-content;
 }
 
+.contact-grid {
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
 .logos {
   display: flex;
-  width: 30%;
   justify-content: space-around;
   align-items: center;
-  padding: 30px;
-  gap: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  text-align: left;
+  gap: 40px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
+
 }
 
 .logos img {
@@ -702,7 +695,7 @@ footer {
 }
 p.copyright {
   display: flex;
-  font-size: 1em;
+  font-size: 0.8em;
   color: #aaa;
   padding: 10px;
 }
