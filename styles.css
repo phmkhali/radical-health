@@ -103,7 +103,11 @@ p {
     align-content: center;
     padding: 0 40px;
   }
+  section {
+    height: 100vh;
+  }
 }
+
 .btn-primary {
   background-color: var(--secondary-color);
   color: #fff;
@@ -293,10 +297,14 @@ p {
 }
 
 @media (max-width: 480px) {
+    #mission-statement {
+        height: 100vh;
+    }
   #mission-statement .container {
     display: flex;
     flex-direction: column;
     gap: 0;
+    height: 100vh;
   }
 
   .mission-statement-content {
@@ -427,6 +435,9 @@ p {
 }
 
 @media (max-width: 480px) {
+    #data h1 {
+        font-size: 2.5em;
+    }
   .counter {
     font-size: 2em;
   }
@@ -439,7 +450,7 @@ p {
     margin-top: 20px;
   }
   .image-counters p {
-    font-size: 1em;
+    font-size: 1.2em;
     text-wrap: wrap;
   }
   .grid-item {
@@ -481,6 +492,7 @@ p {
   z-index: 2;
   justify-content: flex-start;
   text-align: center;
+  height: auto;
 }
 
 .team-content {
@@ -621,7 +633,7 @@ p {
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   #team-intro .container {
-    padding: 40px;
+    padding: 10px 0 0 0;
   }
   #team-intro h2 {
     font-size: 2.5em;
@@ -637,17 +649,57 @@ p {
 
 /* Media query for smaller mobile devices */
 @media (max-width: 480px) {
-  #team-intro .container {
-    padding: 40px;
-  }
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .team-member img {
-    max-width: 100px;
-    /* Even smaller for mobile */
-  }
+    @media (max-width: 480px) {
+        #team {
+          height: auto;
+          padding-bottom: 40px;
+        }
+      
+        .team-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+      
+        .team-member {
+          padding: 15px;
+        }
+      
+        .team-member img {
+          max-width: 80px;
+        }
+      
+        .team-info h3 {
+          font-size: 1.2em;
+        }
+      
+        .team-info p.position-title {
+          font-size: 1em;
+        }
+      
+        .team-info p.introduction {
+          font-size: 0.9em;
+        }
+      
+        #contact .container {
+          padding: 10px 0 0 0;
+        }
+        #contact p {
+            font-size: 1em;
+        }
+        .contact-grid {
+          flex-direction: column;
+          gap: 20px;
+          padding: 10px;
+        }
+      
+        .logos {
+          gap: 20px;
+        }
+      
+        .logos img {
+          width: 80px;
+        }
+      }
 }
 
 #contact {
