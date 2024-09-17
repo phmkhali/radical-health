@@ -374,7 +374,6 @@ p {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #111;
 }
 #data .container {
   display: flex;
@@ -462,14 +461,39 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: url("assets/waves-b.svg") no-repeat center center;
+  position: relative;
+  background: url("assets/poly-grid.svg") no-repeat center center;
   background-size: cover;
+}
+#team::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
 }
 
 #team .container {
+  position: relative;
+  z-index: 2;
   justify-content: flex-start;
   text-align: center;
 }
+
+.team-content {
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+    padding: 40px 0;
+  }
+  
+  .team-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 
 .arrow-down {
   margin: 50px 0 50px 0;
@@ -512,7 +536,7 @@ p {
   overflow: hidden;
   text-align: left;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
 }
@@ -545,7 +569,7 @@ p {
   margin-bottom: 10px;
   font-size: 1.1em;
   font-weight: bold;
-  color: #8a8a8a;
+  color: #cec9c9;
 }
 
 .team-info p.introduction {
@@ -559,7 +583,7 @@ p {
 .team-member:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* Animation keyframes */
@@ -628,17 +652,18 @@ p {
 
 #contact {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: fit-content;
-  color: #aaa;
-  background-color: black;
 }
 
 #contact .container {
   padding: 20px;
   height: 100%;
   align-items: center;
+  justify-content: center;
+  padding: 40px 0;
 }
 
 #contact .btn-primary {
@@ -653,6 +678,13 @@ p {
   align-items: center;
   padding: 30px;
   gap: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: left;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
 }
 
 .logos img {
@@ -662,12 +694,17 @@ p {
   border-radius: 8px;
 }
 
+footer {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
 p.copyright {
   display: flex;
-  margin-top: 40px;
   font-size: 1em;
   color: #aaa;
-  align-items: flex-end;
+  padding: 10px;
 }
 
 /* Responsive adjustments for mobile */
