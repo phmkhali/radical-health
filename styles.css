@@ -1,7 +1,8 @@
 :root {
     --primary-color: #329296;
-    --secondary-color: #6bfaffbb;
-    --accent-color: #fff;
+    --secondary-color: #7f81b2;
+    --accent-color: #b9c7c8;
+    --dark-color: #324b4c;
     --top-bar-height: 50px;
 }
 
@@ -103,16 +104,16 @@ p {
     position: relative; 
     z-index: 2;
     opacity: 0;
-    transform: translateY(20px); 
-    transition: opacity 0.3s ease, transform 0.3s ease; 
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .subheader {
     font-size: x-large;
     margin-bottom: 30px;
     opacity: 0;
-    transform: translateY(20px); 
-    transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s; 
+    transform: translateY(20px);
+    transition: opacity 2s ease 0.1s, transform 1s ease 0.1s;
 }
 
 /* Visible state for landing text */
@@ -163,7 +164,6 @@ p {
         font-size: 1em; 
     }
 }
-
 
 /* Mission Statement Section Styles */
 #mission-statement {
@@ -386,7 +386,7 @@ p {
     height: 0;
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
-    border-top: 35px solid var(--primary-color); 
+    border-top: 35px solid var(--secondary-color);
     animation: blink 1s infinite;
 }
 
@@ -436,7 +436,7 @@ p {
 .team-info h3 {
     margin: 10px 0;
     font-size: 1.5em;
-    color: var(--accent-color); 
+    color: var(--secondary-color);
     font-weight: 600;
 }
 
@@ -444,7 +444,6 @@ p {
     margin-bottom: 10px;
     font-size: 1.1em;
     font-weight: bold;
-    color: var(--primary-color);
 }
 
 .team-info p.introduction {
@@ -565,7 +564,7 @@ footer {
 }
 
 .nav-btn {
-    color: var(--accent-color);
+    color:#aaa;
     text-decoration: none;
     font-size: 1em;
     padding: 10px 10px;
