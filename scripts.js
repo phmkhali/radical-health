@@ -42,9 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.animate-grid-item').forEach(item => {
             const rect = item.getBoundingClientRect();
             if (rect.top < windowHeight && rect.bottom >= 0) {
-                item.classList.add('fadeInLeft');
+                item.classList.add('fadeInRight');
             } else {
-                item.classList.remove('fadeInLeft');
+                item.classList.remove('fadeInRight');
             }
         });
 
@@ -136,14 +136,5 @@ document.addEventListener('DOMContentLoaded', () => {
     updateActiveDot();
     handleVisibilityAndAnimation();
 });
-
-// Handle smooth scrolling behavior
-document.addEventListener('wheel', function (e) {
-    e.preventDefault();
-    window.scrollBy({
-        top: e.deltaY,
-        behavior: 'smooth',
-    });
-}, { passive: false });
 
 
