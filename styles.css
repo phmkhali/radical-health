@@ -158,21 +158,20 @@ p {
   transition: opacity 1s ease, transform 1s ease;
 }
 
-.subheader {
-  font-size: x-large;
-  margin-bottom: 50px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 2s ease 0.1s, transform 1s ease 0.1s;
-}
-
-/* Visible state for landing text */
 .landing-text.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Slide-in effect for subheader */
+.subheader {
+  font-size: x-large;
+  margin-bottom: 50px;
+  opacity: 0;
+  color: #aaa;
+  transform: translateY(20px);
+  transition: opacity 2s ease 0.1s, transform 1s ease 0.1s;
+}
+
 .subheader.visible {
   opacity: 1;
   transform: translateY(0);
@@ -262,6 +261,7 @@ p {
   opacity: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
+
 
 .grid-item .text-content {
   display: flex;
@@ -578,7 +578,7 @@ p {
 .team-info h3 {
   margin: 10px 0;
   font-size: 1.5em;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   font-weight: 600;
 }
 
@@ -935,7 +935,7 @@ p.copyright {
 
 .typewriter {
   display: inline-block;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   overflow: hidden;
   white-space: nowrap;
   border-right: 2px solid var(--primary-color);
