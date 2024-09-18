@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const counters = document.querySelectorAll(".counter");
   const landingText = document.querySelector(".landing-text");
   const subheader = document.querySelector(".subheader");
+  
+  // Load the particles.js configuration
+  particlesJS.load('particles-js', 'particlesjs-config.json', function() {
+    console.log('Particles.js config loaded');
+  });
 
   // Update the active dot in the scroll indicator
   function updateActiveDot() {

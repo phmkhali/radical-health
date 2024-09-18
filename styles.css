@@ -109,7 +109,7 @@ p {
 }
 
 .btn-primary {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: #fff;
   padding: 12px 24px;
   border: none;
@@ -133,18 +133,19 @@ p {
   flex-direction: column;
   height: auto;
   align-items: center;
+  background: url("#") no-repeat center center;
   background-size: cover;
 }
 
-#landing::before {
-  content: "";
+#particles-js {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: 0;
 }
 
 .landing-text {
@@ -156,21 +157,20 @@ p {
   transition: opacity 1s ease, transform 1s ease;
 }
 
-.subheader {
-  font-size: x-large;
-  margin-bottom: 50px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 2s ease 0.1s, transform 1s ease 0.1s;
-}
-
-/* Visible state for landing text */
 .landing-text.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Slide-in effect for subheader */
+.subheader {
+  font-size: x-large;
+  margin-bottom: 50px;
+  opacity: 0;
+  color: #aaa;
+  transform: translateY(20px);
+  transition: opacity 2s ease 0.1s, transform 1s ease 0.1s;
+}
+
 .subheader.visible {
   opacity: 1;
   transform: translateY(0);
@@ -206,13 +206,8 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Adjust the alpha value to control the dimming */
-  mix-blend-mode: multiply; /* Add this line */
+  background-color: rgba(0, 0, 0, 0.5);
+  mix-blend-mode: multiply;
   z-index: 0;
 }
 
@@ -299,10 +294,10 @@ p {
 }
 
 @media (max-width: 480px) {
-    #mission-statement {
-        height: auto;
-        padding: 10px;
-    }
+  #mission-statement {
+    height: auto;
+    padding: 10px;
+  }
   #mission-statement .container {
     display: flex;
     flex-direction: column;
@@ -382,16 +377,22 @@ p {
 /* Data Section */
 #data {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: right;
+  height: fit-content;
 }
 #data .container {
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: flex-end;
   align-items: center;
+  height: fit-content;
+  margin: 40px 0;
+  gap: 40px;
 }
+
 .data-content {
   width: 50%;
   opacity: 0;
@@ -411,7 +412,7 @@ p {
   width: 50%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-top: 20px;
 }
 
@@ -440,13 +441,21 @@ p {
 }
 
 @media (max-width: 480px) {
+  #data .container {
+    flex-direction: column;
+    gap: 0px;
+  }
   .data-content {
     width: 80%;
+    text-align: center;
+    align-items: flex-start;
+    order: 1;
   }
   .counter {
     font-size: 2em;
   }
   .image-counters {
+    order: 2;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -464,7 +473,7 @@ p {
   }
   .placeholder-img {
     width: auto;
-    height: 80px;
+    height: 60px;
     object-fit: cover;
     border-radius: 8px;
   }
@@ -502,16 +511,15 @@ p {
 }
 
 .team-content {
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease;
-    padding: 40px 0;
-  }
-  
-  .team-content.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+  padding: 40px 0;
+}
 
+.team-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .arrow-down {
   margin: 50px 0 50px 0;
@@ -579,7 +587,7 @@ p {
 .team-info h3 {
   margin: 10px 0;
   font-size: 1.5em;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   font-weight: 600;
 }
 
@@ -655,61 +663,61 @@ p {
 
 /* Media query for smaller mobile devices */
 @media (max-width: 480px) {
-    @media (max-width: 480px) {
-        #team {
-          height: auto;
-          padding-bottom: 40px;
-        }
-      
-        .team-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-      
-        .team-member {
-          padding: 15px;
-        }
-      
-        .team-member img {
-          max-width: 80px;
-        }
-      
-        .team-info h3 {
-          font-size: 1.2em;
-        }
-      
-        .team-info p.position-title {
-          font-size: 1em;
-        }
-      
-        .team-info p.introduction {
-          font-size: 0.9em;
-        }
-      
-        #contact {
-          padding: 20px;
-        }
-        #contact .container {
-          padding: 10px 0 0 0;
-        }
-        #contact p {
-            font-size: 1em;
-            text-align: center;
-        }
-        .contact-grid {
-          flex-direction: column;
-          gap: 30px;
-          padding: 10px;
-        }
-      
-        .logos {
-          gap: 20px;
-        }
-      
-        .logos img {
-          width: 80px;
-        }
-      }
+  @media (max-width: 480px) {
+    #team {
+      height: auto;
+      padding-bottom: 40px;
+    }
+
+    .team-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .team-member {
+      padding: 15px;
+    }
+
+    .team-member img {
+      max-width: 80px;
+    }
+
+    .team-info h3 {
+      font-size: 1.2em;
+    }
+
+    .team-info p.position-title {
+      font-size: 1em;
+    }
+
+    .team-info p.introduction {
+      font-size: 0.9em;
+    }
+
+    #contact {
+      padding: 20px;
+    }
+    #contact .container {
+      padding: 10px 0 0 0;
+    }
+    #contact p {
+      font-size: 1em;
+      text-align: center;
+    }
+    .contact-grid {
+      flex-direction: column;
+      gap: 30px;
+      padding: 10px;
+    }
+
+    .logos {
+      gap: 20px;
+    }
+
+    .logos img {
+      width: 80px;
+    }
+  }
 }
 
 #contact {
@@ -727,11 +735,20 @@ p {
   width: fit-content;
 }
 
+#contact .btn-primary {
+  background-color: var(--primary-color);
+}
+#contact .btn-primary:hover {
+  background-color: var(--dark-color);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
 .contact-grid {
-    display:flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
 }
 .logos {
   display: flex;
@@ -739,7 +756,6 @@ p {
   align-items: center;
   gap: 40px;
   padding: 20px;
-
 }
 
 .logos img {
@@ -784,14 +800,20 @@ p.copyright {
   position: fixed;
   width: 100%;
   height: 50px;
-  background-color: #111;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 40px 40px;
   z-index: 1000;
 }
 
+.top-bar .btn-primary {
+  text-decoration: none;
+}
+
 .logo img {
+  display: flex;
   height: 40px;
   margin-right: 20px;
 }
@@ -799,6 +821,7 @@ p.copyright {
 .nav-links {
   display: flex;
   gap: 10px;
+  justify-content: center;
 }
 
 /* Navbar buttons */
@@ -813,11 +836,6 @@ p.copyright {
 
 .nav-btn:hover {
   background-color: #313131;
-}
-
-.nav-meeting-btn {
-  color: var(--primary-color);
-  font-weight: bold;
 }
 
 @media (max-width: 768px) {
@@ -917,7 +935,7 @@ p.copyright {
   }
 
   50% {
-    border-right: 2px solid var(--primary-color);
+    border-right: 2px solid var(--secondary-color);
   }
 
   100% {
@@ -930,7 +948,7 @@ p.copyright {
   color: var(--secondary-color);
   overflow: hidden;
   white-space: nowrap;
-  border-right: 2px solid var(--primary-color);
+  border-right: 2px solid var(--secondary-color);
   animation: typewriter 1.5s steps(30, end) forwards,
     blinkCursor 0.75s step-end infinite;
   width: 0;
