@@ -209,6 +209,7 @@ p {
   height: fit-content;
   position: relative;
   background-color: var(--dark-color);
+  padding: 40px 0px;
 }
 
 #mission-statement::before {
@@ -222,9 +223,7 @@ p {
       0,
       0,
       0.5);
-  /* Adjust the alpha value to control the dimming */
   mix-blend-mode: multiply;
-  /* Add this line */
   z-index: 0;
 }
 
@@ -400,6 +399,7 @@ p {
   align-items: center;
   justify-content: center;
   text-align: left;
+  padding: 40px 0px;
   height: fit-content;
 }
 
