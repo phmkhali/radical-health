@@ -109,7 +109,7 @@ p {
 }
 
 .btn-primary {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: #fff;
   padding: 12px 24px;
   border: none;
@@ -384,7 +384,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: right;
+  text-align: left;
   height: fit-content;
 }
 #data .container {
