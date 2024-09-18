@@ -109,7 +109,7 @@ p {
 }
 
 .btn-primary {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: #fff;
   padding: 12px 24px;
   border: none;
@@ -204,13 +204,8 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.5
-  );
-  mix-blend-mode: multiply; 
+  background-color: rgba(0, 0, 0, 0.5);
+  mix-blend-mode: multiply;
   z-index: 0;
 }
 
@@ -262,7 +257,6 @@ p {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-
 .grid-item .text-content {
   display: flex;
   flex-direction: column;
@@ -298,10 +292,10 @@ p {
 }
 
 @media (max-width: 480px) {
-    #mission-statement {
-        height: auto;
-        padding: 10px;
-    }
+  #mission-statement {
+    height: auto;
+    padding: 10px;
+  }
   #mission-statement .container {
     display: flex;
     flex-direction: column;
@@ -515,16 +509,15 @@ p {
 }
 
 .team-content {
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease;
-    padding: 40px 0;
-  }
-  
-  .team-content.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+  padding: 40px 0;
+}
 
+.team-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .arrow-down {
   margin: 50px 0 50px 0;
@@ -668,61 +661,61 @@ p {
 
 /* Media query for smaller mobile devices */
 @media (max-width: 480px) {
-    @media (max-width: 480px) {
-        #team {
-          height: auto;
-          padding-bottom: 40px;
-        }
-      
-        .team-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-      
-        .team-member {
-          padding: 15px;
-        }
-      
-        .team-member img {
-          max-width: 80px;
-        }
-      
-        .team-info h3 {
-          font-size: 1.2em;
-        }
-      
-        .team-info p.position-title {
-          font-size: 1em;
-        }
-      
-        .team-info p.introduction {
-          font-size: 0.9em;
-        }
-      
-        #contact {
-          padding: 20px;
-        }
-        #contact .container {
-          padding: 10px 0 0 0;
-        }
-        #contact p {
-            font-size: 1em;
-            text-align: center;
-        }
-        .contact-grid {
-          flex-direction: column;
-          gap: 30px;
-          padding: 10px;
-        }
-      
-        .logos {
-          gap: 20px;
-        }
-      
-        .logos img {
-          width: 80px;
-        }
-      }
+  @media (max-width: 480px) {
+    #team {
+      height: auto;
+      padding-bottom: 40px;
+    }
+
+    .team-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .team-member {
+      padding: 15px;
+    }
+
+    .team-member img {
+      max-width: 80px;
+    }
+
+    .team-info h3 {
+      font-size: 1.2em;
+    }
+
+    .team-info p.position-title {
+      font-size: 1em;
+    }
+
+    .team-info p.introduction {
+      font-size: 0.9em;
+    }
+
+    #contact {
+      padding: 20px;
+    }
+    #contact .container {
+      padding: 10px 0 0 0;
+    }
+    #contact p {
+      font-size: 1em;
+      text-align: center;
+    }
+    .contact-grid {
+      flex-direction: column;
+      gap: 30px;
+      padding: 10px;
+    }
+
+    .logos {
+      gap: 20px;
+    }
+
+    .logos img {
+      width: 80px;
+    }
+  }
 }
 
 #contact {
@@ -750,10 +743,10 @@ p {
 }
 
 .contact-grid {
-    display:flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
 }
 .logos {
   display: flex;
@@ -761,7 +754,6 @@ p {
   align-items: center;
   gap: 40px;
   padding: 20px;
-
 }
 
 .logos img {
@@ -806,14 +798,20 @@ p.copyright {
   position: fixed;
   width: 100%;
   height: 50px;
-  background-color: #111;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 40px 40px;
   z-index: 1000;
 }
 
+.top-bar .btn-primary {
+  text-decoration: none;
+}
+
 .logo img {
+  display: flex;
   height: 40px;
   margin-right: 20px;
 }
@@ -821,6 +819,7 @@ p.copyright {
 .nav-links {
   display: flex;
   gap: 10px;
+  justify-content: center;
 }
 
 /* Navbar buttons */
@@ -835,11 +834,6 @@ p.copyright {
 
 .nav-btn:hover {
   background-color: #313131;
-}
-
-.nav-meeting-btn {
-  color: var(--primary-color);
-  font-weight: bold;
 }
 
 @media (max-width: 768px) {
