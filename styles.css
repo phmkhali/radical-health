@@ -120,6 +120,7 @@ p {
   transition: background-color 0.3s ease, box-shadow 0.3s ease,
     transform 0.3s ease;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
 }
 
 .btn-primary:hover {
@@ -787,14 +788,17 @@ p.copyright {
     justify-content: center;
     align-items: center;
   }
+
   .footer-wrapper {
     flex-direction: column;
     text-align: center;
     gap: 10px;
   }
+
   .sponsors {
     flex-direction: column;
   }
+
   footer .btn-primary {
     margin: 0 0 10px 0;
   }
@@ -814,7 +818,6 @@ p.copyright {
 }
 
 .top-bar .btn-primary {
-  text-decoration: none;
   background-color: #111;
 }
 
@@ -959,4 +962,79 @@ p.copyright {
     blinkCursor 0.75s step-end infinite;
   width: 0;
   animation-fill-mode: forwards;
+}
+
+
+/* contact.html */
+#request-a-meeting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+
+#request-a-meeting::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+#request-a-meeting .container {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 25%;
+  height: 80%;
+  border-radius: 3em;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  padding: 20px 0;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.8em;
+  margin-bottom: 1.2em;
+  border: 1px solid var(--dark-color);
+  border-radius: 10px;
+  background-color: #111;
+  color: #fff;
+  font-size: 1rem;
+  font-family: "SF";
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: var(--primary-color);
+}
+
+form label {
+  font-size: 1rem;
+  color: var(--accent-color);
+  align-self: flex-start;
+  margin-bottom: 5px;
+}
+
+form textarea {
+  resize: none;
+  height: 150px;
+}
+#request-a-meeting p {
+  font-size: 0.8em;
+  text-align: center;
+  color: #aaa;
 }
