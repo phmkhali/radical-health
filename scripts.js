@@ -1,3 +1,29 @@
+// Play backgorund audio
+window.addEventListener('load', () => {
+  const backgroundAudio = document.getElementById('backgroundAudio');
+  backgroundAudio.volume = 0.5;
+});
+// Play hover sound
+  const sound = document.getElementById('hoverSound');
+  const buttons = document.querySelectorAll('.btn-primary');
+  
+  buttons.forEach(button => {
+    let isPlaying = false;
+
+    button.addEventListener('mousemove', () => {
+      if (!isPlaying) {
+        sound.currentTime = 0; 
+        sound.play();
+        isPlaying = true;
+      }
+    });
+
+    button.addEventListener('mouseleave', () => {
+      isPlaying = false;
+    });
+  });
+
+// Animations
 document.addEventListener("DOMContentLoaded", () => {
   const dots = document.querySelectorAll("#scroll-indicator .dot");
   const sections = Array.from(dots).map((dot) => {
