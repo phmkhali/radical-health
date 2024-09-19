@@ -5,12 +5,12 @@ window.addEventListener('load', () => {
 });
 // Play hover sound
   const sound = document.getElementById('hoverSound');
-  const buttons = document.querySelectorAll('.btn-primary');
+  const hoverElements = document.querySelectorAll('.btn-primary, .team-member');
   
-  buttons.forEach(button => {
+  hoverElements.forEach(hoverElement => {
     let isPlaying = false;
 
-    button.addEventListener('mousemove', () => {
+    hoverElement.addEventListener('mousemove', () => {
       if (!isPlaying) {
         sound.currentTime = 0; 
         sound.play();
@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
       }
     });
 
-    button.addEventListener('mouseleave', () => {
+    hoverElement.addEventListener('mouseleave', () => {
       isPlaying = false;
     });
   });
