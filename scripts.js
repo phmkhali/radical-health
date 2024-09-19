@@ -1,27 +1,52 @@
-// Play backgorund audio
-window.addEventListener('load', () => {
-  const backgroundAudio = document.getElementById('backgroundAudio');
-  backgroundAudio.volume = 0.5;
-});
+// Play audio
+const backgroundAudio = document.getElementById('backgroundAudio');
+const hoverSound = document.getElementById('hoverSound');
+const soundToggle = document.getElementById('soundToggle');
+const soundIcon = document.getElementById('soundIcon');
+let isSoundEnabled = false; 
+
+// Set initial volume
+backgroundAudio.volume = 0.5;
+
 // Play hover sound
-  const sound = document.getElementById('hoverSound');
-  const hoverElements = document.querySelectorAll('.btn-primary, .team-member');
-  
-  hoverElements.forEach(hoverElement => {
-    let isPlaying = false;
+const hoverElements = document.querySelectorAll('.btn-primary, .team-member');
 
-    hoverElement.addEventListener('mousemove', () => {
-      if (!isPlaying) {
-        sound.currentTime = 0; 
-        sound.play();
-        isPlaying = true;
-      }
-    });
+hoverElements.forEach(hoverElement => {
+  let isPlaying = false;
 
-    hoverElement.addEventListener('mouseleave', () => {
-      isPlaying = false;
-    });
+  hoverElement.addEventListener('mousemove', () => {
+    if (isSoundEnabled && !isPlaying) {
+      hoverSound.currentTime = 0; 
+      hoverSound.play();
+      isPlaying = true;
+    }
   });
+
+  hoverElement.addEventListener('mouseleave', () => {
+    isPlaying = false;
+  });
+});
+
+// Toggle sound
+soundToggle.addEventListener('click', () => {
+  isSoundEnabled = !isSoundEnabled;
+  if (isSoundEnabled) {
+    backgroundAudio.volume = 0.5; // Restore volume
+    soundIcon.src = 'assets/unmute.svg'; // Set icon to unmute
+
+    // Play background audio if not already playing
+    if (backgroundAudio.paused) {
+      backgroundAudio.play();
+    }
+  } else {
+    backgroundAudio.volume = 0; // Mute volume
+    soundIcon.src = 'assets/mute.svg'; // Set icon to mute
+    backgroundAudio.pause(); 
+  }
+
+  backgroundAudio.muted = !isSoundEnabled; 
+});
+
 
 // Animations
 document.addEventListener("DOMContentLoaded", () => {

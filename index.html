@@ -13,6 +13,9 @@
 </head>
 
 <body>
+  <button id="soundToggle">
+    <img id="soundIcon" src="assets/mute.svg" alt="Sound Icon" />
+  </button>
   <div id="scroll-indicator">
     <div class="dot" data-target="#landing"></div>
     <div class="dot" data-target="#mission-statement"></div>
@@ -34,7 +37,7 @@
 
   <section id="landing">
     <audio id="hoverSound" src="assets/sfx.mp3" preload="auto"></audio>
-    <audio id="backgroundAudio" src="assets/background_audio.mp3" autoplay loop></audio>
+    <audio id="backgroundAudio" src="assets/background_audio.mp3" preload="auto" autoplay loop></audio>
     <div class="container">
       <div class="landing-text">
         <p class="subheader">Radical Health</p>
