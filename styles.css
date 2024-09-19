@@ -114,7 +114,7 @@ p {
 .btn-primary {
   background-color: var(--primary-color);
   color: #fff;
-  padding: 0.5em 1.5em;
+  padding: 0.7em 1.5em;
   border: none;
   border-radius: 10px;
   font-size: 1rem;
@@ -734,103 +734,71 @@ p {
     .team-info p.introduction {
       font-size: 0.9em;
     }
-
-    #contact {
-      padding: 20px;
-    }
-
-    #contact .container {
-      padding: 10px 0 0 0;
-    }
-
-    #contact p {
-      font-size: 1em;
-      text-align: center;
-    }
-
-    .contact-grid {
-      flex-direction: column;
-      gap: 30px;
-      padding: 10px;
-    }
-
-    .logos {
-      gap: 20px;
-    }
-
-    .logos img {
-      width: 80px;
-    }
   }
 }
 
-#contact {
+/* Footer */
+footer {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: fit-content;
+  flex-direction: column;
+  padding: 20px 40px 0 40px;
 }
 
-#contact .container {
-  padding: 40px 0 0 0;
-  height: fit-content;
+.footer-wrapper {
+  color: #aaa;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  width: 100%;
+  margin: 0;
+  gap: 40px;
+}
+
+.sponsors {
+  display: flex;
+  align-items: center;
+}
+
+.sponsors-logos {
   width: fit-content;
 }
 
-.contact-grid {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  align-items: center;
-}
-
-.logos {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 40px;
-  padding: 20px;
-
-}
-
-.logos img {
+.sponsors-logos img {
   width: 100px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  filter: grayscale(0.5);
 }
 
-footer {
-  display: flex;
-  width: 100%;
-  text-align: center;
-  justify-content: center;
+footer .btn-primary {
+  margin-left: auto;
 }
 
 p.copyright {
   display: flex;
   font-size: 0.8em;
   color: #aaa;
-  padding: 10px;
+  padding: 0 0 10px 0;
+  margin-top: 10px;
 }
 
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
-  #contact .container {
-    grid-template-columns: 1fr;
-    /* Stack form and logos section on smaller screens */
-    gap: 20px;
-  }
-
-  .logos {
+  footer {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding: 0;
+    align-items: center;
   }
-
-  .logos img {
-    width: 80px;
+  .footer-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .sponsors {
+    flex-direction: column;
+  }
+  footer .btn-primary {
+    margin: 0 0 10px 0;
   }
 }
 
@@ -849,12 +817,12 @@ p.copyright {
 
 .top-bar .btn-primary {
   text-decoration: none;
+  background-color: #111;
 }
 
 .logo img {
   display: flex;
   height: 40px;
-  margin-right: 20px;
 }
 
 .nav-links {
