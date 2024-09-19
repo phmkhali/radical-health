@@ -50,7 +50,7 @@ section {
 }
 
 h1 {
-  font-size: 5em;
+  font-size: 4em;
   font-family: 'SF-BOLD';
   margin-bottom: 20px;
 }
@@ -71,10 +71,6 @@ p {
 }
 
 @media (max-width: 768px) {
-  h1 {
-    font-size: 5em;
-  }
-
   h2 {
     font-size: 2em;
   }
@@ -85,10 +81,6 @@ p {
 }
 
 @media (max-width: 480px) {
-  h1 {
-    font-size: 4em;
-  }
-
   h2 {
     font-size: 1.5em;
     text-wrap: wrap;
@@ -122,7 +114,7 @@ p {
 .btn-primary {
   background-color: var(--primary-color);
   color: #fff;
-  padding: 12px 24px;
+  padding: 0.5em 1.5em;
   border: none;
   border-radius: 10px;
   font-size: 1rem;
@@ -158,6 +150,10 @@ p {
   z-index: 1;
 }
 
+#landing .btn-primary {
+  font-size: 1.2em;
+}
+
 .landing-text {
   margin: 0;
   position: relative;
@@ -165,14 +161,22 @@ p {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
+  width: 60%;
+}
+
+.landing-text h1 {
+  margin-bottom: 1em;
 }
 
 .subheader {
+  font-family: "SF-BOLD";
   font-size: x-large;
-  margin-bottom: 50px;
+  margin-bottom: 1em;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 2s ease 0.1s, transform 1s ease 0.1s;
+  letter-spacing: 0.4em;
+  color: var(--secondary-color);
 }
 
 /* Visible state for landing text */
@@ -189,15 +193,23 @@ p {
 
 @media (max-width: 480px) {
   #landing {
-    text-align: center;
+    justify-content: center;
+    align-items: center;
   }
 
-  .landing-text h2 {
-    font-size: 1.5em;
+  .landing-text {
+    width: 100%;
+  }
+
+  #landing .btn-primary {
+    font-size: 1em;
+  }
+
+  .landing-text h1 {
+    font-size: 2.5em;
   }
 
   .landing-text p {
-    margin-top: 30px;
     font-size: 1.3em;
   }
 }
