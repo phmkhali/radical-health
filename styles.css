@@ -1038,3 +1038,11 @@ form textarea {
   text-align: center;
   color: #aaa;
 }
+
+@media (max-width: 1400px) {
+  #request-a-meeting .container {
+    width: 90%;
+    height: 90%;
+    padding: 40px 40px;
+  }
+}
