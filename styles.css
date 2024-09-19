@@ -26,7 +26,7 @@
 body {
   font-family: "SF", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
     Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #111;
+  background-color: #080808;
   color: #fff;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -411,8 +411,8 @@ p {
   align-items: center;
   justify-content: center;
   text-align: left;
-  padding: 40px 0px;
-  height: fit-content;
+  padding: 5em 0px;
+  height: 100%;
 }
 
 #data .container {
@@ -422,7 +422,6 @@ p {
   align-items: flex-end;
   align-items: center;
   height: fit-content;
-  margin: 40px 0;
   gap: 40px;
 }
 
@@ -448,7 +447,6 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 20px;
 }
 
 .image-counters p {
@@ -465,7 +463,6 @@ p {
   width: auto;
   height: 100px;
   object-fit: cover;
-  border-radius: 8px;
 }
 
 .counter {
@@ -516,7 +513,6 @@ p {
     width: auto;
     height: 60px;
     object-fit: cover;
-    border-radius: 8px;
   }
 }
 
