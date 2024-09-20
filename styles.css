@@ -689,14 +689,6 @@ form textarea {
   color: #aaa;
 }
 
-@media (max-width: 1400px) {
-  #request-a-meeting .container {
-    width: 90%;
-    height: 90%;
-    padding: 40px 40px;
-  }
-}
-
 /* Keyframes */
 @keyframes bounce {
   0%, 100% {
@@ -797,6 +789,9 @@ form textarea {
 /* Media queries */
 /* Tablets and half browser */
 @media (max-width: 1350px) {
+  .top-bar .nav-btn {
+    display: none;
+  }
   #soundToggle {
     display: none;
   }
@@ -814,7 +809,7 @@ form textarea {
   }
 
   p {
-    font-size: 1.2em;
+    font-size: 1.5em;
   }
 
   .container {
@@ -827,6 +822,22 @@ form textarea {
 
   .landing-text {
     width: 100%;
+  }
+
+  #mission-statement {
+    padding: 40px
+  }
+
+  #mission-statement .container {
+    flex-direction: column;
+    gap: 0;
+    height: auto;
+  }
+
+  .mission-statement-content {
+    padding: 20px 0;
+    width: 100%;
+    text-align: left;
   }
 
   .mission-statement-content-typewriter {
@@ -875,6 +886,21 @@ form textarea {
     max-width: 120px;
   }
 
+  .team-info h3 {
+    font-size: 2em;
+  }
+
+  .team-info p.position-title {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #cec9c9;
+  }
+
+  .team-info p.introduction {
+    font-size: 1.5em;
+  }
+
   footer {
     display: flex;
     flex-direction: column;
@@ -894,6 +920,20 @@ form textarea {
 
   footer .btn-primary {
     margin: 0 0 10px 0;
+  }
+  #request-a-meeting {
+    height: 100vh;
+  }
+  #request-a-meeting .container {
+    width: 90%;
+    height: 90%;
+    padding: 40px 40px;
+  }
+  form label {
+    margin-bottom: 0;
+  }
+  #request-a-meeting p {
+    font-size: 1.2em;
   }
 }
 
@@ -931,18 +971,6 @@ form textarea {
     justify-content: center;
     align-content: center;
     padding: 0 40px;
-  }
-
-  #mission-statement .container {
-    flex-direction: column;
-    gap: 0;
-    height: auto;
-  }
-
-  .mission-statement-content {
-    padding: 20px 0;
-    width: 100%;
-    text-align: left;
   }
 
   .counter {
