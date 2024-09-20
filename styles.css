@@ -129,33 +129,24 @@ p {
   right: 40px;
   z-index: 5;
   background-color: rgba(80, 80, 80, 0.5);
-  border: 2px solid rgba(255, 255, 255, 0.8); /* Initial border color */
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  /* Initial border color */
   border-radius: 10px;
   height: 40px;
   width: 40px;
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   padding: 10px;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); 
-  animation: bounce 2s ease-in-out infinite; 
-}
-
-/* Spin the border */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px); 
-  }
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  animation: bounce 2s ease-in-out infinite;
 }
 
 #soundToggle img {
-  height: 100%; 
-  width: 100%; 
-  object-fit: cover; 
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 /* Header Styles */
@@ -222,6 +213,7 @@ p {
   #soundToggle {
     display: none;
   }
+
   #landing {
     justify-content: center;
     align-items: center;
@@ -404,35 +396,6 @@ p {
   }
 }
 
-/* Animation keyframes */
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
-    /* Start from the side */
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-    /* Move to final position */
-  }
-}
-
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100px);
-    /* Start from the side */
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-    /* Move to final position */
-  }
-}
-
 /* Animation delays for each grid item */
 .grid-item:nth-child(1) {
   animation-delay: 0s;
@@ -513,6 +476,7 @@ p {
   color: #fff;
   font-weight: bold;
 }
+
 @media (max-width: 1400px) {
   #data .container {
     flex-direction: column;
@@ -646,19 +610,7 @@ p {
   align-self: center;
 }
 
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
 
-  50% {
-    opacity: 0.3;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
 
 .team-grid {
   display: grid;
@@ -726,21 +678,6 @@ p {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Animation keyframes */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-    /* Start from below */
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    /* Move to final position */
-  }
-}
-
 /* Animation delays for each team member */
 .team-member:nth-child(1) {
   animation-delay: 0s;
@@ -774,25 +711,25 @@ p {
 }
 
 /* Media query for smaller mobile devices */
-  @media (max-width: 480px) {
-    #team {
-      height: auto;
-      padding-bottom: 40px;
-    }
-
-    .team-grid {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    .team-member {
-      padding: 15px;
-    }
-
-    .team-member img {
-      max-width: 80px;
-    }
+@media (max-width: 480px) {
+  #team {
+    height: auto;
+    padding-bottom: 40px;
   }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .team-member {
+    padding: 15px;
+  }
+
+  .team-member img {
+    max-width: 80px;
+  }
+}
 
 /* Footer */
 footer {
@@ -949,30 +886,6 @@ p.copyright {
   animation: fadeInUp 1.5s ease-in-out forwards;
 }
 
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @media (max-width: 768px) {
   #scroll-indicator {
     display: none;
@@ -982,31 +895,6 @@ p.copyright {
 @media (max-width: 480px) {
   #scroll-indicator {
     display: none;
-  }
-}
-
-/* Typewriter Animation */
-@keyframes typewriter {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blinkCursor {
-  0% {
-    border-right: 2px solid transparent;
-  }
-
-  50% {
-    border-right: 2px solid var(--primary-color);
-  }
-
-  100% {
-    border-right: 2px solid transparent;
   }
 }
 
@@ -1021,7 +909,6 @@ p.copyright {
   width: 0;
   animation-fill-mode: forwards;
 }
-
 
 /* contact.html */
 #request-a-meeting {
@@ -1091,6 +978,7 @@ form textarea {
   resize: none;
   height: 150px;
 }
+
 #request-a-meeting p {
   font-size: 0.8em;
   text-align: center;
@@ -1102,5 +990,102 @@ form textarea {
     width: 90%;
     height: 90%;
     padding: 40px 40px;
+  }
+}
+
+/* Keyframes */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCursor {
+  0% {
+    border-right: 2px solid transparent;
+  }
+
+  50% {
+    border-right: 2px solid var(--primary-color);
+  }
+
+  100% {
+    border-right: 2px solid transparent;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
