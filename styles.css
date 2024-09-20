@@ -484,42 +484,6 @@ p {
   animation-delay: 0.6s;
 }
 
-/* Media query for mobile devices */
-@media (max-width: 1400px) {
-  #team-intro .container {
-    padding: 10px 0 0 0;
-  }
-
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .team-member img {
-    max-width: 120px;
-  }
-}
-
-/* Media query for smaller mobile devices */
-@media (max-width: 480px) {
-  #team {
-    height: auto;
-    padding-bottom: 40px;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .team-member {
-    padding: 15px;
-  }
-
-  .team-member img {
-    max-width: 80px;
-  }
-}
-
 /* Footer */
 footer {
   display: flex;
@@ -564,30 +528,6 @@ p.copyright {
   margin-top: 10px;
 }
 
-/* Responsive adjustments for mobile */
-@media (max-width: 768px) {
-  footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .footer-wrapper {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .sponsors {
-    flex-direction: column;
-  }
-
-  footer .btn-primary {
-    margin: 0 0 10px 0;
-  }
-}
-
 /* Top Bar Styles */
 .top-bar {
   position: fixed;
@@ -629,19 +569,6 @@ p.copyright {
 .nav-btn:hover {
   background-color: #313131;
 }
-
-@media (max-width: 768px) {
-  .top-bar {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .top-bar {
-    display: none;
-  }
-}
-
 
 /* Scroll Indicator Styles */
 #scroll-indicator {
@@ -939,10 +866,47 @@ form textarea {
     height: 80px;
     object-fit: cover;
   }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-member img {
+    max-width: 120px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .sponsors {
+    flex-direction: column;
+  }
+
+  footer .btn-primary {
+    margin: 0 0 10px 0;
+  }
 }
 
 /* Mobile */
 @media (max-width: 480px) {
+  .top-bar .nav-btn {
+    display: none;
+  }
+
+  .top-bar .btn-primary {
+    display: none;
+  }
+
   h1 {
     font-size: 2.5em;
   }
@@ -990,4 +954,13 @@ form textarea {
     text-wrap: wrap;
   }
 
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  .team-member {
+    padding: 15px;
+  }
 }
