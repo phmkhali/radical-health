@@ -1,82 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Request a meeting</title>
+    <title>Request a Meeting</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r116/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.globe.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <audio id="hoverSound" src="assets/sfx.mp3" preload="auto"></audio>
     <div class="top-bar">
-        <div class="logo">
-            <img src="assets/logo-white.png" alt="Logo" />
-        </div>
-        <a href="index.html" class="btn-primary">Return to home</a>
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/logo-white.png" alt="Logo" />
+        </a>
+      </div>
+      <a href="index.html" class="btn-primary">Return to home</a>
     </div>
     <section id="request-a-meeting">
-        <div class="container">
-            <h3>Request a meeting</h3>
-            <form id="contactForm" action="mailto:cpe07029@nowni.com" method="post" enctype="text/plain">
-                <input type="hidden" name="subject" value="Request for meeting">
-                <label for="name" class="required">Name</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="organization">Organization (optional)</label>
-                <input type="text" id="organization" name="organization">
-
-                <label for="email" class="required">Email</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message" class="required">Message</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <button class="btn-primary" type="submit">Submit</button>
-            </form>
-            <p>Alternatively, send an email to: simone@radicalhealth.ai</p>
-        </div>
+      <div class="container">
+        <h3>Request a Meeting</h3>
+        <form
+          id="contactForm"
+          action="mailto:cpe07029@nowni.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <input type="hidden" name="subject" value="Request for meeting" />
+          <label for="name" class="required">Name</label>
+          <input type="text" id="name" name="name" required />
+          <label for="organization">Organization (optional)</label>
+          <input type="text" id="organization" name="organization" />
+          <label for="email" class="required">Email</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message" class="required">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <button class="btn-primary" type="submit">Submit</button>
+        </form>
+        <p>Alternatively, send an email to: simone@radicalhealth.ai</p>
+      </div>
     </section>
 
     <footer>
-        <div class="footer-wrapper">
-            <div class="logo">
-                <img src="assets/logo-white.png" alt="Logo" />
-            </div>
-            <div class="sponsors">
-                <p>Backed by Entrepreneur First and Transpose Platform.</p>
-                <div class="sponsors-logos">
-                    <img src="assets/entrepreneur_first.png" alt="Entrepreneur First" />
-                    <img src="assets/transpose_platform.png" alt="Transpose Platform" />
-                </div>
-            </div>
-            <a href="index.html" class="btn-primary">Return to home</a>
+      <div class="footer-wrapper">
+        <div class="logo">
+          <img src="assets/logo-white.png" alt="Logo" />
         </div>
-        <p class="copyright">&copy; 2024 Radical Health. All Rights Reserved.</p>
+        <div class="sponsors">
+          <p>Backed by Entrepreneur First and Transpose Platform.</p>
+          <div class="sponsors-logos">
+            <img src="assets/entrepreneur_first.png" alt="Entrepreneur First" />
+            <img src="assets/transpose_platform.png" alt="Transpose Platform" />
+          </div>
+        </div>
+        <a href="index.html" class="btn-primary">Return to home</a>
+      </div>
+      <p class="copyright">&copy; 2024 Radical Health. All Rights Reserved.</p>
     </footer>
 
     <script src="scripts.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            VANTA.GLOBE({
-                el: "#request-a-meeting",
-                mouseControls: true,
-                touchControls: true,
-                gyroControls: false,
-                minHeight: 200.00,
-                minWidth: 200.00,
-                scale: 1.00,
-                scaleMobile: 1.00,
-                color: 0x329296,
-                backgroundColor: 0x111111
-            });
+      document.addEventListener("DOMContentLoaded", (event) => {
+        VANTA.GLOBE({
+          el: "#request-a-meeting",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0x329296,
+          backgroundColor: 0x111111,
         });
+      });
     </script>
-</body>
-
+  </body>
 </html>
