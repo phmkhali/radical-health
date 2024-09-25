@@ -1,224 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Radical Health</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r116/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.globe.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Radical Health</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r116/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.globe.min.js"></script>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-</head>
-
-<body>
-  <button id="soundToggle">
-    <img id="soundIcon" src="assets/mute.svg" alt="Sound Icon" />
-  </button>
-  <div id="scroll-indicator">
-    <div class="dot" data-target="#landing"></div>
-    <div class="dot" data-target="#mission-statement"></div>
-    <div class="dot" data-target="#data"></div>
-    <div class="dot" data-target="#team"></div>
-  </div>
-  <div class="top-bar">
-    <div class="logo">
-      <img src="assets/logo-white.png" alt="Logo" />
+  <body>
+    <button id="soundToggle">
+      <img id="soundIcon" src="assets/mute.svg" alt="Sound Icon" />
+    </button>
+    <div id="scroll-indicator">
+      <div class="dot" data-target="#landing"></div>
+      <div class="dot" data-target="#mission-statement"></div>
+      <div class="dot" data-target="#data"></div>
+      <div class="dot" data-target="#team"></div>
     </div>
-    <nav class="nav-links">
-      <a href="#landing" class="nav-btn">Home</a>
-      <a href="#mission-statement" class="nav-btn">Mission Statement</a>
-      <a href="#data" class="nav-btn">Our Data</a>
-      <a href="#team" class="nav-btn">Team</a>
-    </nav>
-    <a href="contact.html" class="btn-primary">Request a meeting</a>
-  </div>
-
-  <section id="landing">
-    <audio id="hoverSound" src="assets/sfx.mp3" preload="auto"></audio>
-    <audio id="backgroundAudio" src="assets/background_audio.mp3" preload="auto" loop></audio>
-    <div class="container">
-      <div class="landing-text">
-        <p class="subheader">Radical Health</p>
-        <h1>Foundational cancer models to run every hospital.</h1>
-        <a href="contact.html" class="btn-primary">Request a meeting</a>
+    <div class="top-bar">
+      <div class="logo">
+        <img src="assets/logo-white.png" alt="Logo" />
       </div>
+      <nav class="nav-links">
+        <a href="#landing" class="nav-btn">Home</a>
+        <a href="#mission-statement" class="nav-btn">Mission Statement</a>
+        <a href="#data" class="nav-btn">Our Data</a>
+        <a href="#team" class="nav-btn">Team</a>
+      </nav>
+      <a href="contact.html" class="btn-primary">Request a meeting</a>
     </div>
-  </section>
 
-  <section id="mission-statement">
-    <div class="container">
-      <div class="mission-statement-content">
-        <h2>
-          In 10 years, our models will drive all cancer treatment
-          decision-making saving
-        </h2>
-        <div class="mission-statement-content-typewriter">
-          <h2 class="animate-text">10,000,000 human lives.</h2>
+    <section id="landing">
+      <audio id="hoverSound" src="assets/sfx.mp3" preload="auto"></audio>
+      <audio
+        id="backgroundAudio"
+        src="assets/background_audio.mp3"
+        preload="auto"
+        loop
+      ></audio>
+      <div class="container">
+        <div class="landing-text">
+          <p class="subheader">Radical Health</p>
+          <h1>Foundational cancer models to run every hospital.</h1>
+          <a href="contact.html" class="btn-primary">Request a meeting</a>
         </div>
       </div>
-      <div class="vertical-grid">
-        <div class="grid-item animate-grid-item">
-          <div class="text-content">
-            <h3>The challenge</h3>
-            <p>
-              There are millions of valuable datapoints (past patients,
-              research) that are relevant to clinical decision-making.
-              However, in practice, doctors can’t physically process such
-              immense unstructured datasets to make decisions on clinical
-              care.
-            </p>
-          </div>
-        </div>
-        <div class="grid-item animate-grid-item">
-          <div class="text-content-solution">
-            <h3 class="solution">Our mission</h3>
-            <p>
-              We're building foundational cancer models that will make doctors
-              superhuman and supercharge doctor-patient trust.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="data">
-    <div class="container">
-      <div class="image-counters">
-        <div class="image-container">
-          <img src="assets/ucsf.png" alt="Placeholder Image 1" class="placeholder-img" />
-          <div class="counter" id="counter1" data-end-value="100">
-            6043084
+    <section id="mission-statement">
+      <div class="container">
+        <div class="mission-statement-content">
+          <h2>
+            In 10 years, our models will drive all cancer treatment
+            decision-making saving
+          </h2>
+          <div class="mission-statement-content-typewriter">
+            <h2 class="animate-text">10,000,000 human lives.</h2>
           </div>
-          <p>Patients accessed</p>
         </div>
-        <div class="image-container">
-          <img src="assets/mayo_clinic.png" alt="Placeholder Image 2" class="placeholder-img" />
-          <div class="counter" id="counter2" data-end-value="200">
-            2500000
+        <div class="vertical-grid">
+          <div class="grid-item animate-grid-item">
+            <div class="text-content">
+              <h3>The challenge</h3>
+              <p>
+                There are millions of valuable datapoints (past patients,
+                research) that are relevant to clinical decision-making.
+                However, in practice, doctors can’t physically process such
+                immense unstructured datasets to make decisions on clinical
+                care.
+              </p>
+            </div>
           </div>
-          <p>Provisional validation set</p>
+          <div class="grid-item animate-grid-item">
+            <div class="text-content-solution">
+              <h3 class="solution">Our mission</h3>
+              <p>
+                We're building foundational cancer models that will make doctors
+                superhuman and supercharge doctor-patient trust.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="data-content">
-        <h2>
-          We have an<span class="highlight"> unfair advantage</span> with data
-          quality and quantity.
-        </h2>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="team">
-    <div class="container">
-      <div class="team-content">
-        <h2>
-          A team of outlier doctors and AI engineers advised by America’s top
-          decision-makers and practitioners in oncology.
-        </h2>
-      </div>
-      <div class="arrow-down"></div>
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="assets/simone.png" alt="Simone Jensen" />
-          <div class="team-info">
-            <h3>Simone Jensen</h3>
-            <p class="position-title">CEO and Co-Founder
-            </p>
-            <p class="introduction">
-            <ul>
-              <li>Rank No. 1 at top University in Scotland, Mathematics </li>
-              <li>Founded 2 startups during University including one in AI tumour growth models</li>
-              <li>2x National Tennis Champion </li>
-            </ul>
-            </p>
+    <section id="data">
+      <div class="container">
+        <div class="image-counters">
+          <div class="image-container">
+            <img src="assets/ucsf.png" alt="UCSF Logo" class="counter-img" />
+            <div class="counter" id="counter1" data-end-value="100">
+              6043084
+            </div>
+            <p>Patients accessed</p>
+          </div>
+          <div class="image-container">
+            <img
+              src="assets/mayo_clinic.png"
+              alt="Mayo Clinic Logo"
+              class="counter-img"
+            />
+            <div class="counter" id="counter2" data-end-value="200">
+              2500000
+            </div>
+            <p>Provisional validation set</p>
           </div>
         </div>
-        <div class="team-member">
-          <img src="assets/gediminas.png" alt="Gediminas Pazera" />
-          <div class="team-info">
-            <h3>Dr. Gediminas Pazera</h3>
-            <p class="position-title">CTO and Co-Founder</p>
-            <p class="introduction">
+        <div class="data-content">
+          <h2>
+            We have an<span class="highlight"> unfair advantage</span> with data
+            quality and quantity.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section id="team">
+      <div class="container">
+        <div class="team-content">
+          <h2>
+            A team of outlier doctors and AI engineers advised by America’s top
+            decision-makers and practitioners in oncology.
+          </h2>
+        </div>
+        <div class="arrow-down"></div>
+        <div class="team-grid">
+          <div class="team-member">
+            <img src="assets/simone.png" alt="Simone Jensen" />
+            <div class="team-info">
+              <h3>Simone Jensen</h3>
+              <p class="position-title">CEO and Co-Founder</p>
+              <ul>
+                <li>Rank No. 1 at top University in Scotland, Mathematics</li>
+                <li>
+                  Founded 2 startups during University including one in AI
+                  tumour growth models
+                </li>
+                <li>2x National Tennis Champion</li>
+              </ul>
+            </div>
+          </div>
+          <div class="team-member">
+            <img src="assets/gediminas.png" alt="Gediminas Pazera" />
+            <div class="team-info">
+              <h3>Dr. Gediminas Pazera</h3>
+              <p class="position-title">CTO and Co-Founder</p>
               <ul>
                 <li>PhD at Oxford, focussed on ML in Bio and Chemistry</li>
                 <li>Aged 22, Lectured the Math underpinning ML at Oxford</li>
                 <li>Professional bachata dancer</li>
               </ul>
-            </p>
+            </div>
           </div>
-        </div>
-        <div class="team-member">
-          <img src="assets/ella.png" alt="Ella Mi" />
-          <div class="team-info">
-            <h3>Dr. Ella Mi</h3>
-            <p class="position-title">
-              Non Exec Director (Clinical / Regulatory) 
-            </p>
-            <p class="introduction">
+          <div class="team-member">
+            <img src="assets/ella.png" alt="Ella Mi" />
+            <div class="team-info">
+              <h3>Dr. Ella Mi</h3>
+              <p class="position-title">
+                Non Exec Director (Clinical / Regulatory)
+              </p>
               <ul>
                 <li>NHS Medical Oncologist, Cambridge trained</li>
                 <li>Award winning Oxford ML Cancer researcher</li>
                 <li>7 years experience in healthcare regulation</li>
               </ul>
-            </p>
+            </div>
           </div>
-        </div>
-        <div class="team-member">
-          <img src="assets/bryan.png" alt="Bryan Tan" />
-          <div class="team-info">
-            <h3>Bryan Tan</h3>
-            <p class="position-title">Founding Engineer</p>
-            <p class="introduction">
+          <div class="team-member">
+            <img src="assets/bryan.png" alt="Bryan Tan" />
+            <div class="team-info">
+              <h3>Bryan Tan</h3>
+              <p class="position-title">Founding Engineer</p>
               <ul>
                 <li>Cambridge Biology Undergraduate Valedictorian</li>
                 <li>Cambridge MSc on Health AI - Best thesis award</li>
                 <li>Ex-Military intelligence, top cadet during training</li>
                 <li>Ex-founder in AI for Biology</li>
               </ul>
-            </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <div class="footer-wrapper">
-      <div class="logo">
-        <img src="assets/logo-white.png" alt="Logo" />
-      </div>
-      <div class="sponsors">
-        <p>Backed by Entrepreneur First and Transpose Platform.</p>
-        <div class="sponsors-logos">
-          <img src="assets/entrepreneur_first.png" alt="Entrepreneur First" />
-          <img src="assets/transpose_platform.png" alt="Transpose Platform" />
+    <footer>
+      <div class="footer-wrapper">
+        <div class="logo">
+          <img src="assets/logo-white.png" alt="Logo" />
         </div>
+        <div class="sponsors">
+          <p>Backed by Entrepreneur First and Transpose Platform.</p>
+          <div class="sponsors-logos">
+            <img src="assets/entrepreneur_first.png" alt="Entrepreneur First" />
+            <img src="assets/transpose_platform.png" alt="Transpose Platform" />
+          </div>
+        </div>
+        <a href="contact.html" class="btn-primary">Request a meeting</a>
       </div>
-      <a href="contact.html" class="btn-primary">Request a meeting</a>
-    </div>
-    <p class="copyright">&copy; 2024 Radical Health. All Rights Reserved.</p>
-  </footer>
+      <p class="copyright">&copy; 2024 Radical Health. All Rights Reserved.</p>
+    </footer>
 
-  <script src="scripts.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-      VANTA.GLOBE({
-        el: "#landing",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        color: 0x329296,
-        backgroundColor: 0x111111
+    <script src="scripts.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        VANTA.GLOBE({
+          el: "#landing",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0x329296,
+          backgroundColor: 0x111111,
+        });
       });
-    });
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

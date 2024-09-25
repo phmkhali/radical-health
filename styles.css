@@ -333,7 +333,7 @@ p {
   margin-top: 50px;
 }
 
-.placeholder-img {
+.counter-img {
   width: auto;
   height: 100px;
   object-fit: cover;
@@ -453,7 +453,7 @@ p {
   color: #cec9c9;
 }
 
-.team-info p.introduction {
+.team-info ul {
   margin: 10px 0;
   font-size: 1em;
   color: #fff;
@@ -793,6 +793,7 @@ form textarea {
   .top-bar .nav-btn {
     display: none;
   }
+
   #soundToggle {
     display: none;
   }
@@ -873,7 +874,7 @@ form textarea {
     margin-top: 20px;
   }
 
-  .placeholder-img {
+  .counter-img {
     width: auto;
     height: 80px;
     object-fit: cover;
@@ -898,8 +899,8 @@ form textarea {
     color: #cec9c9;
   }
 
-  .team-info p.introduction {
-    font-size: 1.5em;
+  .team-info ul {
+    font-size: 1.2em;
   }
 
   footer {
@@ -922,17 +923,21 @@ form textarea {
   footer .btn-primary {
     margin: 0 0 10px 0;
   }
+
   #request-a-meeting {
     height: 100vh;
   }
+
   #request-a-meeting .container {
     width: 90%;
     height: 90%;
     padding: 40px 40px;
   }
+
   form label {
     margin-bottom: 0;
   }
+
   #request-a-meeting p {
     font-size: 1.2em;
   }
