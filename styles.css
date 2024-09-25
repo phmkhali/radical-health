@@ -663,10 +663,11 @@ p.copyright {
 }
 
 #request-a-meeting .container {
-  background-color: rgba(0, 0, 0, 0.8);
-  width: 25%;
-  height: 80%;
-  border-radius: 3em;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 500px;
+  height: 85%;
+  border-radius: 30px;
+  margin-top: 4em;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
 }
 
@@ -683,7 +684,7 @@ form {
 form input,
 form textarea {
   width: 100%;
-  padding: 0.8em;
+  padding: 0.5em;
   margin-bottom: 1.2em;
   border: 1px solid var(--dark-color);
   border-radius: 10px;
@@ -701,10 +702,10 @@ form textarea:focus {
 }
 
 form label {
-  font-size: 1rem;
+  font-size: 1em;
   color: var(--accent-color);
   align-self: flex-start;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 form textarea {
@@ -818,6 +819,18 @@ form textarea {
 /* Media queries */
 /* Tablets and half browser */
 @media (max-width: 1350px) {
+  .top-bar {
+    padding: 30px 30px;
+  }
+
+  .top-bar img {
+    height: 25px;
+  }
+
+  .top-bar .btn-primary {
+    font-size: 0.8rem;
+  }
+
   .top-bar .nav-btn {
     display: none;
   }
@@ -838,8 +851,12 @@ form textarea {
     font-size: 2.2em;
   }
 
-  p {
+  h3 {
     font-size: 1.5em;
+  }
+
+  p {
+    font-size: 1.2em;
   }
 
   .container {
@@ -960,17 +977,8 @@ form textarea {
   }
 
   #request-a-meeting .container {
-    width: 90%;
-    height: 90%;
+    height: 80%;
     padding: 40px 40px;
-  }
-
-  form label {
-    margin-bottom: 0;
-  }
-
-  #request-a-meeting p {
-    font-size: 1.2em;
   }
 }
 
@@ -1027,5 +1035,17 @@ form textarea {
 
   .team-member {
     padding: 20px;
+  }
+
+  #request-a-meeting form {
+    justify-content: start;
+  }
+
+  #request-a-meeting .container {
+    width: 90%;
+  }
+
+  #request-a-meeting p {
+    font-size: 1.2em;
   }
 }
