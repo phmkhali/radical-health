@@ -405,7 +405,7 @@ p {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  justify-items: stretch;
+  justify-items: center;
   align-items: stretch;
   height: auto;
 }
@@ -415,11 +415,13 @@ p {
   opacity: 0;
   border-radius: 10px;
   overflow: hidden;
-  text-align: left;
+  text-align: center;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .team-member.fadeInUp {
@@ -427,12 +429,12 @@ p {
 }
 
 .team-member img {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
+  width: 150px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .team-info {
@@ -440,24 +442,50 @@ p {
 }
 
 .team-info h3 {
-  margin: 10px 0;
-  font-size: 1.5em;
+  margin: 5px 0;
+  font-size: 1.4em;
   color: var(--secondary-color);
   font-weight: 600;
 }
 
 .team-info p.position-title {
-  margin-bottom: 10px;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: #cec9c9;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  color: #8f8f8f;
+  text-transform: uppercase;
 }
 
 .team-info ul {
-  margin: 10px 0;
-  font-size: 1em;
-  color: #fff;
-  line-height: 1.6;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: #cacaca;
+  line-height: 1.4;
+}
+
+.team-info ul li {
+  padding: 5px 0;
+  text-align: left;
+  position: relative;
+  padding-left: 20px;
+}
+
+.team-info ul li::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.team-info ul li span {
+  display: inline-block;
 }
 
 /* Hover effect for team members */
@@ -884,23 +912,26 @@ form textarea {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .team-member {
+    text-align: center;
+    padding: 20px;
+  }
+
   .team-member img {
-    max-width: 120px;
+    max-width: 150px;
   }
 
   .team-info h3 {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   .team-info p.position-title {
-    margin-bottom: 20px;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #cec9c9;
+    font-size: 1em;
   }
 
   .team-info ul {
     font-size: 1.2em;
+    text-align: left;
   }
 
   footer {
@@ -995,6 +1026,6 @@ form textarea {
   }
 
   .team-member {
-    padding: 15px;
+    padding: 20px;
   }
 }
