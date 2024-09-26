@@ -418,6 +418,7 @@ p {
 }
 
 .team-member img {
+  height: 100%;
   width: 250px;
   object-fit: cover;
   margin-bottom: 15px;
@@ -929,6 +930,7 @@ form textarea {
   .team-member {
     text-align: center;
     padding: 20px;
+    height: 100%;
   }
 
   .team-member img {
