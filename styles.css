@@ -660,6 +660,12 @@ p.copyright {
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
 }
 
+#request-a-meeting p {
+  font-size: 0.8em;
+  text-align: center;
+  color: #aaa;
+}
+
 /* Form Styling */
 form {
   display: flex;
@@ -700,12 +706,6 @@ form label {
 form textarea {
   resize: none;
   height: 150px;
-}
-
-#request-a-meeting p {
-  font-size: 0.8em;
-  text-align: center;
-  color: #aaa;
 }
 
 /* Keyframes */

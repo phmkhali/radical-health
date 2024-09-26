@@ -29,22 +29,29 @@
         <h3>Request a Meeting</h3>
         <form
           id="contactForm"
-          action="mailto:cpe07029@nowni.com"
-          method="post"
+          action="https://sheetdb.io/api/v1/34c34x0z0skv7"
+          method="POST"
           enctype="text/plain"
         >
-          <input type="hidden" name="subject" value="Request for meeting" />
+          <input type="hidden" id="submissionDate" name="data[date]" />
           <label for="name" class="required">Name</label>
-          <input type="text" id="name" name="name" required />
+          <input type="text" id="name" name="data[name]" required />
           <label for="organization">Organization (optional)</label>
-          <input type="text" id="organization" name="organization" />
+          <input type="text" id="organization" name="data[organization]" />
           <label for="email" class="required">Email</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="data[email]" required />
           <label for="message" class="required">Message</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
+          <textarea
+            id="message"
+            name="data[message]"
+            rows="4"
+            required
+          ></textarea>
           <button class="btn-primary" type="submit">Submit</button>
         </form>
-        <p>Alternatively, send an email to: simone@radicalhealth.ai</p>
+        <p class="form-note">
+          Alternatively, send an email to: simone@radicalhealth.ai
+        </p>
       </div>
     </section>
 
@@ -80,6 +87,40 @@
           color: 0x329296,
           backgroundColor: 0x111111,
         });
+      });
+    </script>
+    <script>
+      var form = document.getElementById("contactForm");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault(); // Prevent default form submission
+        // Get the current date and time
+        const currentDate = new Date().toISOString();
+        // Set the hidden input value to the current date and time
+        const dateInput = document.getElementById("submissionDate");
+        dateInput.value = currentDate;
+
+        fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then(() => {
+            // Success message
+            alert("Thank you for messaging us! We will contact you shortly.");
+          })
+          .catch((error) => {
+            // Error message
+            console.error("There was a problem with your request:", error);
+            alert(
+              "Something went wrong. Please try again or contact us directly."
+            );
+          });
       });
     </script>
   </body>
