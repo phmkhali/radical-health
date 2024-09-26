@@ -4,6 +4,7 @@
   --accent-color: #b9c7c8;
   --dark-color: #324b4c;
   --top-bar-height: 50px;
+  --background: #080808;
 }
 
 @font-face {
@@ -25,14 +26,17 @@
 body {
   font-family: "SF", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
     Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #080808;
-  color: #fff;
+  background-color: black;
+  color: #ebebeb;
   overflow-x: hidden;
   height: 100%;
 }
 
 section {
   display: flex;
+  background-color: var(--background);
+  border-radius: 30px;
+  margin: 0 30px 30px 30px;
 }
 
 /* General Styles */
@@ -118,6 +122,8 @@ p {
   height: auto;
   align-items: center;
   background-size: cover;
+  border-radius: 0;
+  margin: 0;
 }
 
 #landing::before {
@@ -179,6 +185,7 @@ p {
   position: relative;
   background-color: var(--dark-color);
   padding: 40px 0px;
+  margin-top: 30px;
 }
 
 #mission-statement::before {
@@ -232,7 +239,7 @@ p {
 .grid-item {
   display: flex;
   align-items: flex-start;
-  border-radius: 10px;
+  border-radius: 30px;
   flex-direction: column;
   padding: 30px;
   text-align: left;
@@ -241,6 +248,8 @@ p {
   transform: translateX(-100px);
   opacity: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
+  ;
 }
 
 .grid-item .text-content {
@@ -361,6 +370,7 @@ p {
   justify-content: flex-start;
   text-align: center;
   height: auto;
+  width: 100%;
 }
 
 .team-content {
@@ -599,7 +609,7 @@ p.copyright {
 #scroll-indicator {
   position: fixed;
   top: 50%;
-  left: 20px;
+  left: 10px;
   transform: translateY(-50%);
   z-index: 1000;
 }
@@ -646,6 +656,8 @@ p.copyright {
   align-items: center;
   background-size: cover;
   height: 100vh;
+  border-radius: 0;
+  margin: 0;
 }
 
 #request-a-meeting::before {
