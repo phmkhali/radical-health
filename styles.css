@@ -880,10 +880,6 @@ form textarea {
     width: 100%;
   }
 
-  #mission-statement {
-    padding: 40px
-  }
-
   #mission-statement .container {
     flex-direction: column;
     gap: 0;
