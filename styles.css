@@ -174,11 +174,13 @@ p {
 
 /* Mission Statement Section Styles */
 #mission-statement {
+  overflow: hidden;
   flex-direction: row;
   height: fit-content;
   position: relative;
   background-color: var(--dark-color);
   padding: 40px 0px;
+  width: 100%;
 }
 
 #mission-statement::before {
@@ -868,10 +870,6 @@ form textarea {
     width: 100%;
   }
 
-  #mission-statement {
-    padding: 40px
-  }
-
   #mission-statement .container {
     flex-direction: column;
     gap: 0;
@@ -886,6 +884,10 @@ form textarea {
 
   .mission-statement-content-typewriter {
     width: fit-content;
+  }
+
+  .grid-item {
+    padding: 20px;
   }
 
   .vertical-grid {
