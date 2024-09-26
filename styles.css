@@ -929,12 +929,13 @@ form textarea {
   .team-member {
     text-align: center;
     padding: 20px;
-    height: 100%;
+    height: auto;
   }
 
   .team-member img {
     max-width: 250px;
     border-radius: 50%;
+    height: auto;
   }
 
   .team-info h3 {
