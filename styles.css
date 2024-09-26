@@ -410,7 +410,7 @@ p {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   background-color: #111;
-  padding: 0 10px 10px 10px;
+  padding: 10px;
 }
 
 .team-member.fadeInUp {
@@ -418,12 +418,15 @@ p {
 }
 
 .team-member img {
-  width: 400px;
+  width: 250px;
   object-fit: cover;
   margin-bottom: 15px;
   aspect-ratio: 1 / 1;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background-color: var(--dark-color);
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  border-radius: 50%;
 }
 
 .team-info {
@@ -482,6 +485,11 @@ p {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.team-member img:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
 }
 
 /* Animation delays for each team member */
