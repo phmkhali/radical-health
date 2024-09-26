@@ -434,8 +434,7 @@ p {
   aspect-ratio: 1 / 1;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background-color: var(--dark-color);
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
+
   border-radius: 50%;
 }
 
