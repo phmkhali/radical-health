@@ -7,6 +7,8 @@
     <title>Radical Health</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r116/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.globe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.dots.min.js"></script>
+    
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -95,31 +97,25 @@
 
     <section id="data">
       <div class="container">
-        <div class="image-counters">
-          <div class="image-container">
-            <img src="assets/ucsf.png" alt="UCSF Logo" class="counter-img" />
+        <h2>
+          We have an <span class="highlight">unfair advantage</span> with data
+          quality and quantity.
+        </h2>
+        <div class="data-content">
+          <div class="counter-container">
             <div class="counter" id="counter1" data-end-value="100">
               6043084
             </div>
             <p>Patients accessed</p>
           </div>
-          <div class="image-container">
-            <img
-              src="assets/mayo_clinic.png"
-              alt="Mayo Clinic Logo"
-              class="counter-img"
-            />
+          <div class="counter-container">
             <div class="counter" id="counter2" data-end-value="200">
               3500000
             </div>
             <p>Provisional validation set</p>
           </div>
         </div>
-        <div class="data-content">
-          <h2>
-            We have an<span class="highlight"> unfair advantage</span> with data
-            quality and quantity.
-          </h2>
+
         </div>
       </div>
     </section>
@@ -165,9 +161,7 @@
             <img src="assets/ella.png" alt="Ella Mi" />
             <div class="team-info">
               <h3>Dr. Ella Mi</h3>
-              <p class="position-title">
-                Non Exec Director (Clinical / Regulatory)
-              </p>
+              <p class="position-title">Clinical and Regulation</p>
               <ul>
                 <li>NHS Medical Oncologist, Cambridge trained</li>
                 <li>Award winning Oxford ML Cancer researcher</li>
@@ -226,5 +220,24 @@
         });
       });
     </script>
+        <script>
+          document.addEventListener("DOMContentLoaded", (event) => {
+            VANTA.DOTS({
+  el: "#data",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 2.00,
+  scaleMobile: 1.00,
+  color: 0x329296,
+  backgroundColor: 0x111111,
+  size: 2.30,
+  spacing: 24.00,
+  showLines: false
+})
+          });
+        </script>
   </body>
 </html>
