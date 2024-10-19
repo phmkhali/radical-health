@@ -409,7 +409,7 @@ p {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   background-color: #111;
-  padding: 10px;
+  padding: 20px;
 }
 
 .team-member.fadeInUp {
